@@ -12,7 +12,7 @@ public class bateria_slot : MonoBehaviour
         if (Input.GetKeyDown(spawnKey))
         {
             
-            Transform hijo = spawn.transform.Find("spawn");
+            Transform hijo = spawn.transform.Find("spawn_1");
             // Obtener las coordenadas del objeto desde el cual deseas spawnear.
             Vector3 spawnPosition = hijo.position;
             
