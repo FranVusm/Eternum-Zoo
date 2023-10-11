@@ -11,7 +11,7 @@ public class CamaraControler : MonoBehaviour
     float XRotation = 0;
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
 
     // Update is called once per frame
