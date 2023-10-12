@@ -1,61 +1,102 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class bateria_slot : MonoBehaviour
+public class BateriaSlot : MonoBehaviour
 {
     public GameObject objectToSpawn;
     public GameObject objectToSpawn2;
     public GameObject objectToSpawn3;
-    public GameObject objectToSpawn4;// El Prefab del objeto que deseas spawnear.
-    public KeyCode spawnKey; // La tecla para spawnear el objeto.
+    public GameObject objectToSpawn4;
+    public KeyCode spawnKey;
     public GameObject spawn;
+
+    [System.Serializable]
+    public class SpawnedObjectData
+    {
+        public Vector3 position;
+        public Quaternion rotation;
+        public Vector3 scale; // Nueva variable para almacenar la escala
+        public GameObject prefab;
+    }
+
+    private List<SpawnedObjectData> spawnedObjectsData = new List<SpawnedObjectData>();
+
     private void Update()
     {
         if (Input.GetKeyDown(spawnKey))
         {
-            
-            Transform hijo = spawn.transform.Find("spawn_1");
-            // Obtener las coordenadas del objeto desde el cual deseas spawnear.
-            Vector3 spawnPosition = hijo.position;
-            
-            Quaternion rotationQuaternion = hijo.rotation;
-            // Spawnear el objeto en las coordenadas específicas.
-            GameObject spawnedObject = Instantiate(objectToSpawn, spawnPosition, rotationQuaternion);
-            // Unir el objeto spawn al objeto inicial.
+            Vector3 spawnPosition = spawn.transform.position;
+            Quaternion rotationQuaternion = spawn.transform.rotation;
+            GameObject spawnedObject = Instantiate(spawn, spawnPosition, rotationQuaternion);
             spawnedObject.transform.parent = transform;
 
+            // Guardar datos del objeto padre
+            SpawnedObjectData objectDataPadre = new SpawnedObjectData
+            {
+                position = spawnedObject.transform.position,
+                rotation = spawnedObject.transform.rotation,
+                scale = spawnedObject.transform.localScale, // ObtÃ©n la escala del objeto
+                prefab = spawnedObject
+            };
+
+            spawnedObjectsData.Add(objectDataPadre);
+
+            //Los demÃ¡s objetos
+            Transform hijo = spawn.transform.Find("spawn_1");
+            InstanciarYGuardarObjeto(objectToSpawn, hijo);
+
             Transform hijo2 = spawn.transform.Find("spawn_2");
-            // Obtener las coordenadas del objeto desde el cual deseas spawnear.
-            Vector3 spawnPosition2 = hijo2.position;
-
-            Quaternion rotationQuaternion2 = hijo2.rotation;
-            // Spawnear el objeto en las coordenadas específicas.
-            GameObject spawnedObject2 = Instantiate(objectToSpawn2, spawnPosition2, rotationQuaternion2);
-            // Unir el objeto spawn al objeto inicial.
-            spawnedObject2.transform.parent = transform;
-
+            InstanciarYGuardarObjeto(objectToSpawn2, hijo2);
 
             Transform hijo3 = spawn.transform.Find("spawn_3");
-            // Obtener las coordenadas del objeto desde el cual deseas spawnear.
-            Vector3 spawnPosition3 = hijo3.position;
-
-             
-            Quaternion rotationQuaternion3 = hijo3.rotation;
-            // Spawnear el objeto en las coordenadas específicas.
-            GameObject spawnedObject3 = Instantiate(objectToSpawn3, spawnPosition3, rotationQuaternion3);
-            // Unir el objeto spawn al objeto inicial.
-            spawnedObject3.transform.parent = transform;
+            InstanciarYGuardarObjeto(objectToSpawn3, hijo3);
 
             Transform hijo4 = spawn.transform.Find("spawn_4");
-            // Obtener las coordenadas del objeto desde el cual deseas spawnear.
-            Vector3 spawnPosition4 = hijo4.position;
+            InstanciarYGuardarObjeto(objectToSpawn4, hijo4);
 
-            Quaternion rotationQuaternion4 = hijo4.rotation;
-            // Spawnear el objeto en las coordenadas específicas.
-            GameObject spawnedObject4 = Instantiate(objectToSpawn4, spawnPosition4, rotationQuaternion4);
-            // Unir el objeto spawn al objeto inicial.
-            spawnedObject4.transform.parent = transform;
+            GuardarPrefabModificado();
         }
+    }
+
+    private void InstanciarYGuardarObjeto(GameObject objetoPrefab, Transform spawnTransform)
+    {
+        Vector3 spawnPosition = spawnTransform.position;
+        Quaternion rotationQuaternion = spawnTransform.rotation;
+        Vector3 scale = spawnTransform.localScale; // ObtÃ©n la escala del objeto
+
+        GameObject spawnedObject = Instantiate(objetoPrefab, spawnPosition, rotationQuaternion);
+        spawnedObject.transform.localScale = scale; // Aplica la escala al objeto instanciado
+        spawnedObject.transform.parent = transform;
+
+        SpawnedObjectData objectData = new SpawnedObjectData
+        {
+            position = spawnedObject.transform.position,
+            rotation = spawnedObject.transform.rotation,
+            scale = scale, // Guarda la escala
+            prefab = spawnedObject
+        };
+
+        spawnedObjectsData.Add(objectData);
+    }
+
+    public void GuardarPrefabModificado()
+    {
+        GameObject prefabParent = new GameObject("ArmaModificada");
+
+        foreach (var data in spawnedObjectsData)
+        {
+            GameObject spawnedObject = Instantiate(data.prefab, data.position, data.rotation);
+            spawnedObject.transform.localScale = data.scale; // Aplica la escala al objeto instanciado
+            spawnedObject.transform.parent = prefabParent.transform;
+        }
+
+        string prefabPath = "Assets/Darael/scene/armamodificada.prefab";
+
+        PrefabUtility.SaveAsPrefabAssetAndConnect(prefabParent, prefabPath, InteractionMode.UserAction);
+        DestroyImmediate(prefabParent);
+
+        spawnedObjectsData.Clear();
     }
 }
