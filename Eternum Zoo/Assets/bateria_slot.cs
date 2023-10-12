@@ -10,6 +10,7 @@ public class BateriaSlot : MonoBehaviour
     public GameObject objectToSpawn3;
     public GameObject objectToSpawn4;
     public KeyCode spawnKey;
+    public KeyCode spawnKey2;
     public GameObject spawn;
 
     [System.Serializable]
@@ -17,7 +18,6 @@ public class BateriaSlot : MonoBehaviour
     {
         public Vector3 position;
         public Quaternion rotation;
-        public Vector3 scale; // Nueva variable para almacenar la escala
         public GameObject prefab;
     }
 
@@ -27,23 +27,8 @@ public class BateriaSlot : MonoBehaviour
     {
         if (Input.GetKeyDown(spawnKey))
         {
-            Vector3 spawnPosition = spawn.transform.position;
-            Quaternion rotationQuaternion = spawn.transform.rotation;
-            GameObject spawnedObject = Instantiate(spawn, spawnPosition, rotationQuaternion);
-            spawnedObject.transform.parent = transform;
+            
 
-            // Guardar datos del objeto padre
-            SpawnedObjectData objectDataPadre = new SpawnedObjectData
-            {
-                position = spawnedObject.transform.position,
-                rotation = spawnedObject.transform.rotation,
-                scale = spawnedObject.transform.localScale, // Obtén la escala del objeto
-                prefab = spawnedObject
-            };
-
-            spawnedObjectsData.Add(objectDataPadre);
-
-            //Los demás objetos
             Transform hijo = spawn.transform.Find("spawn_1");
             InstanciarYGuardarObjeto(objectToSpawn, hijo);
 
@@ -58,45 +43,27 @@ public class BateriaSlot : MonoBehaviour
 
             GuardarPrefabModificado();
         }
+        if (Input.GetKeyDown(spawnKey2)){
+            GuardarPrefabModificado();
+        }
     }
+
 
     private void InstanciarYGuardarObjeto(GameObject objetoPrefab, Transform spawnTransform)
     {
         Vector3 spawnPosition = spawnTransform.position;
         Quaternion rotationQuaternion = spawnTransform.rotation;
-        Vector3 scale = spawnTransform.localScale; // Obtén la escala del objeto
-
         GameObject spawnedObject = Instantiate(objetoPrefab, spawnPosition, rotationQuaternion);
-        spawnedObject.transform.localScale = scale; // Aplica la escala al objeto instanciado
         spawnedObject.transform.parent = transform;
-
-        SpawnedObjectData objectData = new SpawnedObjectData
-        {
-            position = spawnedObject.transform.position,
-            rotation = spawnedObject.transform.rotation,
-            scale = scale, // Guarda la escala
-            prefab = spawnedObject
-        };
-
-        spawnedObjectsData.Add(objectData);
     }
+    
 
     public void GuardarPrefabModificado()
     {
-        GameObject prefabParent = new GameObject("ArmaModificada");
+        string prefabPath = "Assets/Darael/scene/arma 1.prefab";
 
-        foreach (var data in spawnedObjectsData)
-        {
-            GameObject spawnedObject = Instantiate(data.prefab, data.position, data.rotation);
-            spawnedObject.transform.localScale = data.scale; // Aplica la escala al objeto instanciado
-            spawnedObject.transform.parent = prefabParent.transform;
-        }
-
-        string prefabPath = "Assets/Darael/scene/armamodificada.prefab";
-
-        PrefabUtility.SaveAsPrefabAssetAndConnect(prefabParent, prefabPath, InteractionMode.UserAction);
-        DestroyImmediate(prefabParent);
-
-        spawnedObjectsData.Clear();
+        // Guardar el objeto spawn como un prefab sin un padre
+        PrefabUtility.SaveAsPrefabAsset(spawn, prefabPath);
     }
+
 }
