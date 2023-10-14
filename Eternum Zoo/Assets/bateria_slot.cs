@@ -63,6 +63,7 @@ public class BateriaSlot : MonoBehaviour
         string prefabPath = "Assets/Darael/scene/arma 1.prefab";
 
         // Guardar el objeto spawn como un prefab sin un padre
+        // Esto es un comentario
         PrefabUtility.SaveAsPrefabAsset(spawn, prefabPath);
     }
 
