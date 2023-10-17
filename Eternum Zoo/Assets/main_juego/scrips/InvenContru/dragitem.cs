@@ -13,6 +13,7 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         image.raycastTarget = false;
+        
     }
 
     public void OnDrag(PointerEventData eventData)

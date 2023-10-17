@@ -7,6 +7,8 @@ TagManager:
   - mesa
   - Seleccionable
   - No seleccionable
+  - Item_seleccionable
+  - hola
   layers:
   - Default
   - TransparentFX
