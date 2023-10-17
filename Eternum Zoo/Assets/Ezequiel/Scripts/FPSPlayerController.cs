@@ -13,15 +13,13 @@ public class FPSPlayerController : MonoBehaviour
     public float gravity = 20.0f;
 
     [Header("Opciones de Camara")]
-    public Camera cam;
-    public float mouseHorizontal = 3.0f;
-    public float mouseVertical = 2.0f;
-    public float minRotation = -65.0f;
-    public float maxRotation = 60.0f;
-    float h_mouse; 
-    float v_mouse;
-    //float XRotation = 0;
-    //public Transform playerBody;
+    //public Camera cam;
+    //public float mouseHorizontal = 30.0f;
+    //public float mouseVertical = 20.0f;
+    //public float minRotation = -65.0f;
+    //public float maxRotation = 60.0f;
+    //float h_mouse; 
+    //float v_mouse;
 
     public Vector3 move =Vector3.zero;
 
@@ -34,19 +32,12 @@ public class FPSPlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //h_mouse = Input.GetAxis("Mouse X")*mouseHorizontal*Time.deltaTime;
-        //v_mouse = Input.GetAxis("Mouse Y") * mouseVertical * Time.deltaTime;
-        //XRotation += v_mouse;
-        //XRotation = Mathf.Clamp(XRotation,-90f, 90f);   
-        //transform.localRotation = Quaternion.Euler(XRotation, 0, 0);
-        //playerBody.Rotate(Vector3.up * h_mouse);
 
+       // h_mouse = mouseHorizontal * Input.GetAxis("Mouse X") * Time.deltaTime;
+       // v_mouse += mouseVertical * Input.GetAxis("Mouse Y") * Time.deltaTime;
 
-        h_mouse = mouseHorizontal * Input.GetAxis("Mouse X");
-        v_mouse += mouseVertical * Input.GetAxis("Mouse Y");
-
-        v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);
-        cam.transform.localEulerAngles = new Vector3(v_mouse, h_mouse, 0);
+       // v_mouse = Mathf.Clamp(v_mouse, minRotation, maxRotation);
+       // cam.transform.localEulerAngles = new Vector3(v_mouse, h_mouse, 0);
 
         if (characterController.isGrounded)
         {
@@ -55,9 +46,9 @@ public class FPSPlayerController : MonoBehaviour
 
             //Correr con Shift o si no caminar
             if(Input.GetKey(KeyCode.LeftShift))
-                move = transform.TransformDirection(move) * runSpeed;
+                move = transform.TransformDirection(move) * runSpeed ;
             else
-                move = transform.TransformDirection(move) * walkSpeed;
+                move = transform.TransformDirection(move) * walkSpeed ;
 
             //Saltar
             if(Input.GetKey(KeyCode.Space))
