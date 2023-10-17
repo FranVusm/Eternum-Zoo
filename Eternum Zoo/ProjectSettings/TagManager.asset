@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - mesa
+  - Seleccionable
+  - No seleccionable
+  - Item_seleccionable
+  - hola
   layers:
   - Default
   - TransparentFX
