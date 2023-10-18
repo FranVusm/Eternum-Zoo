@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Jobs;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Seleccion : MonoBehaviour
 {
-    private bool selecction = false;
-    private Color colorOriginal;
+    public bool selecction = false;
+    public bool enselc = false;
+    public  Color colorOriginal;
     public GameObject spawn;
-    private bool enselcc = false;
+    public Transform hijo_selec;
+    private Transform hijo_selec1;
+    public GameObject objectToSpawn;
     void Start()
     {
         Transform hijo1 = spawn.transform.Find("spawn_1");
-        Transform hijo2 = spawn.transform.Find("spawn_2");
-        Transform hijo3 = spawn.transform.Find("spawn_3");
-        Transform hijo4 = spawn.transform.Find("spawn_4");
         Renderer hijoRenderer = hijo1.GetComponent<Renderer>();
         Color colorOriginal = hijoRenderer.material.color;
-
     }
 
 
@@ -31,27 +31,39 @@ public class Seleccion : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                
                 // Verificar si el objeto golpeado es una instancia del prefab.
-                if (hit.transform.IsChildOf(spawn.transform) && !enselcc)
+                if ((hit.transform.IsChildOf(spawn.transform)) || hit.collider.tag == "No Seleccionable")
                 {
                     // Obtener el hijo que fue seleccionado.
                     Transform hijoSeleccionado = hit.transform;
-                    
+                    hijo_selec = hijoSeleccionado;
+
                     if (CumpleConCriterios(hijoSeleccionado))
                     {
                         // Cambiar el estado de selección.
                         selecction = !selecction;
-                        enselcc = !enselcc;
+                        enselc = !enselc;
+                        hijo_selec = hijoSeleccionado;
+                        hijo_selec1 = hijoSeleccionado;
 
                         // Cambiar el color del hijo seleccionado.
                         if (selecction)
                         {
                             hijoSeleccionado.GetComponent<Renderer>().material.color = Color.red; // Color de selección.
-                            selecction = !selecction;
+                             
                         }
-                       
+                    }
+                    if (!CumpleConCriterios(hijoSeleccionado) & enselc) 
+                    {
+
+                        hijo_selec1.GetComponent<Renderer>().material.color = colorOriginal;
+                        selecction = !selecction;
+                        enselc = !enselc;
+
                     }
                 }
+               
             }
         }
     }
@@ -60,4 +72,5 @@ public class Seleccion : MonoBehaviour
     {
         return hijo.CompareTag("Seleccionable");
     }
+    
 }

@@ -8,6 +8,8 @@ TagManager:
   - Seleccionable
   - No seleccionable
   - enemigo
+  - Item_seleccionable
+  - hola
   layers:
   - Default
   - TransparentFX
@@ -22,8 +24,8 @@ TagManager:
   - FirstPersonWeapon
   - PhysicalAmmo
   - parche
-  - 
-  - 
+  - piso
+  - cilindros
   - 
   - 
   - 

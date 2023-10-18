@@ -15,4 +15,9 @@ public class InventorySlot : MonoBehaviour, IDropHandler
             draggableitem.parentAfterDrag = transform;
         }
     }
+
+    public void OnMouseUpAsButton()
+    {
+        
+    }
 }
