@@ -48,6 +48,7 @@ public class ProjectileGunTutorial : MonoBehaviour
         //make sure magazine is full
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        
     }
 
     private void Update()
@@ -76,6 +77,7 @@ public class ProjectileGunTutorial : MonoBehaviour
             bulletsShot = 0;
 
             Shoot();
+            //Debug.Log("Se ha disparado");
         }
     }
 
@@ -133,6 +135,8 @@ public class ProjectileGunTutorial : MonoBehaviour
         //if more than one bulletsPerTap make sure to repeat shoot function
         if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
             Invoke("Shoot", timeBetweenShots);
+        
+       // Debug.Log("Disparo");
     }
     private void ResetShot()
     {

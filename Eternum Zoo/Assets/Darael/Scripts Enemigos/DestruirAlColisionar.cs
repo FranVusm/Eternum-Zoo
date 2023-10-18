@@ -6,12 +6,6 @@ public class DestruirAlColisionar : MonoBehaviour
 {
     public float tiempoAntesDeDestruccion = 3f;
 
-    void OnCollisionEnter(Collision collision)
-    {
-        // Destruye el objeto al tocar cualquier cosa
-        Destroy(gameObject);
-    }
-
     void Awake()
     {
         // Invoca la función DestruirDespuesDeTiempo después de un cierto tiempo

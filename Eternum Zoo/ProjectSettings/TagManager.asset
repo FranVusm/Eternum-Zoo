@@ -7,6 +7,7 @@ TagManager:
   - mesa
   - Seleccionable
   - No seleccionable
+  - enemigo
   - Item_seleccionable
   - hola
   layers:
