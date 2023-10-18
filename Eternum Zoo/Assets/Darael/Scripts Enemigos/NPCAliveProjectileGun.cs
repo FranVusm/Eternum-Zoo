@@ -47,10 +47,21 @@ public class NPCAliveProjectileGun : MonoBehaviour
 
         // Shooting
         if (readyToShoot && bulletsLeft > 0)
+    {
+        bulletsShot = 0;
+        Shoot();
+
+        // Revisa si hay balas restantes antes de invocar nuevamente
+        if (bulletsShot < bulletsPerTap && bulletsLeft > 0)
         {
-            bulletsShot = 0;
-            Shoot();
+            Invoke("MyInput", timeBetweenShots); // Invoca la función para el próximo disparo
         }
+        else
+        {
+            // Todas las balas han sido disparadas o no hay balas restantes, permite la invocación de ResetShot
+            allowInvoke = true;
+        }
+    }
     }
 
     private void Shoot()
