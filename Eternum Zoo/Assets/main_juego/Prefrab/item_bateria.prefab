@@ -88,5 +88,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a4630a3401d074ea11938b9a2cc585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn: {fileID: 0}
   image: {fileID: 8903183472963228719}
   parentAfterDrag: {fileID: 0}
+  selc: {fileID: 0}
+  objectToSpawn: {fileID: 2790955230622325696, guid: 2dafc5e53764b704399440c5554acb9f,
+    type: 3}
+  objectToSpawn2: {fileID: 7692963204159856555, guid: 81d0868210b1d3e498e40f9f7e25bccf,
+    type: 3}
+  objectToSpawn3: {fileID: 8702979254342608469, guid: 28d6c1390132d564f86d0858785a249d,
+    type: 3}
+  objectToSpawn4: {fileID: 7694321847384852216, guid: 868b5f64fe93a9944882972b6bab3f3e,
+    type: 3}

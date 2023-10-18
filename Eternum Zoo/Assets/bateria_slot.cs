@@ -30,16 +30,16 @@ public class BateriaSlot : MonoBehaviour
             
 
             Transform hijo = spawn.transform.Find("spawn_1");
-            InstanciarYGuardarObjeto(objectToSpawn, hijo);
+            InstanciarYGuardarObjeto(objectToSpawn, hijo, hijo.name);
 
             Transform hijo2 = spawn.transform.Find("spawn_2");
-            InstanciarYGuardarObjeto(objectToSpawn2, hijo2);
+            InstanciarYGuardarObjeto(objectToSpawn2, hijo2, hijo2.name);
 
             Transform hijo3 = spawn.transform.Find("spawn_3");
-            InstanciarYGuardarObjeto(objectToSpawn3, hijo3);
+            InstanciarYGuardarObjeto(objectToSpawn3, hijo3, hijo3.name);
 
             Transform hijo4 = spawn.transform.Find("spawn_4");
-            InstanciarYGuardarObjeto(objectToSpawn4, hijo4);
+            InstanciarYGuardarObjeto(objectToSpawn4, hijo4, hijo4.name);
 
             GuardarPrefabModificado();
         }
@@ -49,12 +49,12 @@ public class BateriaSlot : MonoBehaviour
     }
 
 
-    private void InstanciarYGuardarObjeto(GameObject objetoPrefab, Transform spawnTransform)
+    public void InstanciarYGuardarObjeto(GameObject objetoPrefab, Transform spawnTransform, string hijo)
     {
         Vector3 spawnPosition = spawnTransform.position;
         Quaternion rotationQuaternion = spawnTransform.rotation;
         GameObject spawnedObject = Instantiate(objetoPrefab, spawnPosition, rotationQuaternion);
-        spawnedObject.transform.parent = transform;
+        spawnedObject.transform.parent = spawn.transform.Find(hijo);
     }
     
 
