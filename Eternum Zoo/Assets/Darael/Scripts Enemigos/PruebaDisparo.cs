@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using TMPro;
+using System;
 
 /// Thanks for downloading my projectile gun script! :D
 /// Feel free to use it in any project you like!
@@ -14,12 +15,13 @@ public class ProjectileGunTutorial : MonoBehaviour
 {
     //bullet 
     public GameObject bullet;
-
+    public GameObject arma_detalles;
     //bullet force
     public float shootForce, upwardForce;
-
+    public BateriaSlot slots;
     //Gun stats
-    public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
+    private float timeBetweenShooting = 1.0f, spread = 0.5f, reloadTime = 1.5f, timeBetweenShots = 1.0f;
+        
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
 
@@ -55,9 +57,38 @@ public class ProjectileGunTutorial : MonoBehaviour
     {
         MyInput();
 
+        Transform hijo = arma_detalles.transform.Find("spawn_1");
+        if (hijo.childCount > 0)
+        {
+           Transform hijo2 =  hijo.GetChild(0);
+            mejora_nombre(hijo2.name);
+             
+        }
+        Transform hijo22 = arma_detalles.transform.Find("spawn_2");
+        if (hijo22.childCount > 0)
+        {
+            Transform hijo23 = hijo22.GetChild(0);
+            mejora_nombre(hijo23.name);
+
+        }
+        Transform hijo3 = arma_detalles.transform.Find("spawn_3");
+        if (hijo3.childCount > 0)
+        {
+            Transform hijo31 = hijo3.GetChild(0);
+            mejora_nombre(hijo31.name);
+
+        }
+        Transform hijo4 = arma_detalles.transform.Find("spawn_4");
+        if (hijo4.childCount > 0)
+        {
+            Transform hijo41 = hijo4.GetChild(0);
+            mejora_nombre(hijo41.name);
+
+        }
         //Set ammo display, if it exists :D
         if (ammunitionDisplay != null)
             ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
+
     }
     private void MyInput()
     {
@@ -100,8 +131,8 @@ public class ProjectileGunTutorial : MonoBehaviour
         Vector3 directionWithoutSpread = targetPoint - attackPoint.position;
 
         //Calculate spread
-        float x = Random.Range(-spread, spread);
-        float y = Random.Range(-spread, spread);
+        float x = UnityEngine.Random.Range(-spread, spread);
+        float y = UnityEngine.Random.Range(-spread, spread);
 
         //Calculate new direction with spread
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
@@ -155,5 +186,26 @@ public class ProjectileGunTutorial : MonoBehaviour
         //Fill magazine
         bulletsLeft = magazineSize;
         reloading = false;
+    }
+
+    private void mejora_nombre(string nombre)
+     {
+      if(nombre == "bateria(Clone)")
+        {
+            timeBetweenShooting = 0.1f;
+            timeBetweenShots = 0.1f;
+        }
+        if (nombre == "cargador(Clone)")
+        {
+            magazineSize = 30;
+        }
+        if (nombre == "cooler(Clone)")
+        {
+            reloadTime = 0.5f;
+        }
+        if (nombre == "silenciador(Clone)")
+        {
+            spread = 0f;
+        }
     }
 }

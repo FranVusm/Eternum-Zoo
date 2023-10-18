@@ -21,7 +21,8 @@ public class MesaControler : MonoBehaviour
             {
                 if(Input.GetKeyDown(KeyCode.E)) 
                 {
-                    hit.collider.transform.GetComponent<mesa_usu>().CambiarAScena();       
+                    hit.collider.transform.GetComponent<mesa_usu>().CambiarAScena();
+                    Cursor.lockState = CursorLockMode.None;
                 }
             }
         }

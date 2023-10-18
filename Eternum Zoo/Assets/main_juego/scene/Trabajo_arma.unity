@@ -1486,7 +1486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1005558893
 Transform:
   m_ObjectHideFlags: 0
@@ -2301,6 +2301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae0be42547418e45b6c755407a3940a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arma: {fileID: 0}
+  arma_reset: {fileID: 2432918447512258530, guid: 485112adfa77aa3489bf63245259fd9d,
+    type: 3}
 --- !u!114 &1310701621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2493,6 +2496,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Seleccionable
       objectReference: {fileID: 0}
+    - target: {fileID: 4895617445102274374, guid: 485112adfa77aa3489bf63245259fd9d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fdcc5d9f1e45855438a4f36f1242cc67, type: 2}
     - target: {fileID: 5148833428110378982, guid: 485112adfa77aa3489bf63245259fd9d,
         type: 3}
       propertyPath: m_TagString
@@ -2593,8 +2601,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 8991510840734257459, guid: 485112adfa77aa3489bf63245259fd9d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fdcc5d9f1e45855438a4f36f1242cc67, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6508394490123706997, guid: 485112adfa77aa3489bf63245259fd9d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2432918447512258530, guid: 485112adfa77aa3489bf63245259fd9d,
