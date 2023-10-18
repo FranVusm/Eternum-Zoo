@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class Seleccion : MonoBehaviour
 {
-    private bool selecction = false;
-    private Color colorOriginal;
+    public bool selecction = false;
+    public bool enselc = false;
+    public  Color colorOriginal;
     public GameObject spawn;
-    private bool enselcc = false;
+    public Transform hijo_selec;
+    private Transform hijo_selec1;
     public GameObject objectToSpawn;
     void Start()
     {
@@ -31,47 +33,37 @@ public class Seleccion : MonoBehaviour
             {
                 
                 // Verificar si el objeto golpeado es una instancia del prefab.
-                if (hit.transform.IsChildOf(spawn.transform) && !enselcc)
+                if ((hit.transform.IsChildOf(spawn.transform)) || hit.collider.tag == "No Seleccionable")
                 {
                     // Obtener el hijo que fue seleccionado.
                     Transform hijoSeleccionado = hit.transform;
-                    
+                    hijo_selec = hijoSeleccionado;
+
                     if (CumpleConCriterios(hijoSeleccionado))
                     {
                         // Cambiar el estado de selección.
                         selecction = !selecction;
-                        enselcc = !enselcc;
+                        enselc = !enselc;
+                        hijo_selec = hijoSeleccionado;
+                        hijo_selec1 = hijoSeleccionado;
 
                         // Cambiar el color del hijo seleccionado.
                         if (selecction)
                         {
                             hijoSeleccionado.GetComponent<Renderer>().material.color = Color.red; // Color de selección.
-                            selecction = !selecction;
-                            if (Input.GetMouseButtonDown(0))
-                            {
-                                print("XD");
-                                Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
-                                RaycastHit hit2;
-                                if (Physics.Raycast(ray, out hit))
-                                {
-                                    Transform item = hit.transform;
-                                    if (item.CompareTag("hola"))
-                                    {
-                                        
-                                        InstanciarYGuardarObjeto(objectToSpawn, hijoSeleccionado);
-                                    }
-                                }
-                            }
-                                
-                            
+                             
                         }
-                        
+                    }
+                    if (!CumpleConCriterios(hijoSeleccionado) & enselc) 
+                    {
+
+                        hijo_selec1.GetComponent<Renderer>().material.color = colorOriginal;
+                        selecction = !selecction;
+                        enselc = !enselc;
+
                     }
                 }
-                
                
-
-                
             }
         }
     }
@@ -80,11 +72,5 @@ public class Seleccion : MonoBehaviour
     {
         return hijo.CompareTag("Seleccionable");
     }
-    private void InstanciarYGuardarObjeto(GameObject objetoPrefab, Transform spawnTransform)
-    {
-        Vector3 spawnPosition = spawnTransform.position;
-        Quaternion rotationQuaternion = spawnTransform.rotation;
-        GameObject spawnedObject = Instantiate(objetoPrefab, spawnPosition, rotationQuaternion);
-        spawnedObject.transform.parent = transform;
-    }
+    
 }
