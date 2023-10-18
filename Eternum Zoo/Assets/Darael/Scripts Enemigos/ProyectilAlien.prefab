@@ -14,10 +14,10 @@ GameObject:
   - component: {fileID: -6521962596039790609}
   - component: {fileID: -3800423139701239619}
   - component: {fileID: 1359386864674006966}
-  - component: {fileID: 3547619186205261121}
+  - component: {fileID: 2256670683710117748}
   - component: {fileID: 1067677893347997139}
   m_Layer: 0
-  m_Name: Proyectil
+  m_Name: ProyectilAlien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tiempoAntesDeDestruccion: 3
---- !u!114 &3547619186205261121
+--- !u!114 &2256670683710117748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,10 +151,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 106790115311484953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5d686b012deba49a55d90d2f1ce0b4, type: 3}
+  m_Script: {fileID: 11500000, guid: e01223a2558a63b4c829f18106300d60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danio: 20
+  danio: 5
 --- !u!65 &1067677893347997139
 BoxCollider:
   m_ObjectHideFlags: 0

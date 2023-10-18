@@ -34,7 +34,7 @@ public class NPCAliveProjectileGun : MonoBehaviour
         if (distanciaAlJugador >= distanciaMinima && distanciaAlJugador <= distanciaMaxima)
         {
             // Apuntar hacia el jugador
-            Vector3 directionToPlayer = (playerRb.position - transform.position).normalized;
+            Vector3 directionToPlayer = (playerRb.position - bulletSpawnPoint.position).normalized;
             transform.rotation = Quaternion.LookRotation(directionToPlayer, Vector3.up);
 
             MyInput();
