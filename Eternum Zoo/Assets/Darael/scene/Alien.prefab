@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 100
   vidaActual: 0
-  jugador: {fileID: 0}
+  jugador: {fileID: 8399893983996853630, guid: 14856c8217c981e42b26502ffc804522, type: 3}
   velocidad: 3.5
   distanciaAcercarMaxima: 10
   "distanciaAcercarM\xEDnima": 1
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f7d7b4d2bfd914795113e0f5dc4003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 0}
+  jugador: {fileID: 8399893983996853630, guid: 14856c8217c981e42b26502ffc804522, type: 3}
   distanciaParaMirar: 25
 --- !u!114 &9175711527526305176
 MonoBehaviour:
@@ -738,7 +738,8 @@ MonoBehaviour:
   timeBetweenShots: 1
   magazineSize: 100
   bulletsPerTap: 1
-  playerRb: {fileID: 0}
+  playerRb: {fileID: 7456352077154736099, guid: 14856c8217c981e42b26502ffc804522,
+    type: 3}
   recoilForce: 0
   muzzleFlash: {fileID: 0}
   distanciaMinima: 1
