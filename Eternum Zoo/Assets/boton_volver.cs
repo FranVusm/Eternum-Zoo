@@ -9,6 +9,6 @@ public class boton_volver : MonoBehaviour
     public void CambiarAScena()
     {
         // Cargar la nueva escena
-        SceneManager.LoadScene("Construccion");
+        SceneManager.LoadScene("construccion");
     }
 }
