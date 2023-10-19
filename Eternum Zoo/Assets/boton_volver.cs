@@ -13,7 +13,7 @@ public class boton_volver : MonoBehaviour
     {
         arma = FindAnyObjectByType<BateriaSlot>();
         arma.GuardarPrefabModificado();
-        SceneManager.LoadScene("construccionPrueba");
+        SceneManager.LoadScene("NivelZoo");
         string prefabPath = "Assets/main_juego/Prefrab/intermedio.prefab";
 
 

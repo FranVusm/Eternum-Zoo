@@ -120,7 +120,6 @@ GameObject:
   - component: {fileID: 8633355240706457878}
   - component: {fileID: 5613793191741882579}
   - component: {fileID: 9148385046580372739}
-  - component: {fileID: 8113121412079970297}
   m_Layer: 0
   m_Name: arma 1
   m_TagString: No seleccionable
@@ -273,25 +272,6 @@ MonoBehaviour:
   colorOriginal: {r: 0, g: 1, b: 0.02745098, a: 0}
   spawn: {fileID: 2432918447512258530}
   hijo_selec: {fileID: 269615192824664905}
-  objectToSpawn: {fileID: 7692963204159856555, guid: 81d0868210b1d3e498e40f9f7e25bccf,
-    type: 3}
---- !u!114 &8113121412079970297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2432918447512258530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d00d54dfef9328469fc3543df632f2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selecction: 0
-  enselc: 0
-  colorOriginal: {r: 0, g: 1, b: 0.02745098, a: 0}
-  spawn: {fileID: 2432918447512258530}
-  hijo_selec: {fileID: 0}
   objectToSpawn: {fileID: 7692963204159856555, guid: 81d0868210b1d3e498e40f9f7e25bccf,
     type: 3}
 --- !u!1 &2718030804615700301
