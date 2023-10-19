@@ -14,7 +14,7 @@ public class boton_volver : MonoBehaviour
         arma = FindAnyObjectByType<BateriaSlot>();
         arma.GuardarPrefabModificado();
         SceneManager.LoadScene("NivelZoo");
-        string prefabPath = "Assets/main_juego/Prefrab/intermedio.prefab";
+        string prefabPath = "Assets/Darael/arma 1.prefab";
 
 
         PrefabUtility.SaveAsPrefabAsset(arma_reset, prefabPath);
