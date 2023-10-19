@@ -22,6 +22,14 @@ public class CambioEscena : MonoBehaviour
     {
         SceneManager.LoadScene("AssetsUsados");
     }
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+    public void Escape()
+    {
+        SceneManager.LoadScene("Escape");
+    }
     public void exit()
     {
         Application.Quit();

@@ -447,6 +447,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &623005177 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8296244903724981737, guid: 14856c8217c981e42b26502ffc804522,
+    type: 3}
+  m_PrefabInstance: {fileID: 3567946592632049465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &669168800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2582,6 +2594,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 688771121427541426, guid: 14856c8217c981e42b26502ffc804522,
+        type: 3}
+      propertyPath: Healthbar
+      value: 
+      objectReference: {fileID: 623005177}
     - target: {fileID: 5363318325530794760, guid: 14856c8217c981e42b26502ffc804522,
         type: 3}
       propertyPath: m_Name

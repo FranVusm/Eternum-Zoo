@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SistemaVida : MonoBehaviour
 {
+
+    public Image Healthbar;
+
     public float vidaMaxima = 100f;
     public float vidaActual;
     public float tasaDeRegeneracion = 1f; // Puntos de vida por segundo
@@ -26,6 +30,7 @@ public class SistemaVida : MonoBehaviour
             if (vidaActual < vidaMaxima)
             {
                 vidaActual += 1f;
+                Healthbar.fillAmount = vidaActual / vidaMaxima;
                 // Asegura que la vida actual no exceda la vida máxima
                 vidaActual = Mathf.Min(vidaActual, vidaMaxima);
             }
@@ -37,6 +42,9 @@ public class SistemaVida : MonoBehaviour
     public void RecibirDanio(float cantidadDanio)
     {
         vidaActual -= cantidadDanio;
+
+        Healthbar.fillAmount = vidaActual / vidaMaxima;
+
         // Verifica si la vida ha llegado a cero o menos
         if (vidaActual <= 0f)
         {
