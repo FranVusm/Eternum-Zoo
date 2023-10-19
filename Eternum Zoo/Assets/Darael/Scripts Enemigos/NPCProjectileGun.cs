@@ -21,7 +21,7 @@ public class NPCProjectileGun : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
-        playerRb = GameObject.Find("Player").GetComponent<Rigidbody>();
+        playerRb = GameObject.Find("player").GetComponent<Rigidbody>();
     }
 
     private void Update()
