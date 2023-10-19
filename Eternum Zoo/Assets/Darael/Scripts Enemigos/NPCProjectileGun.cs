@@ -8,7 +8,7 @@ public class NPCProjectileGun : MonoBehaviour
     public float shootForce, upwardForce;
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
-    public Rigidbody playerRb;
+    private Rigidbody playerRb;
     public float recoilForce;
     public GameObject muzzleFlash;
     //public TextMeshProUGUI ammunitionDisplay;
@@ -21,6 +21,7 @@ public class NPCProjectileGun : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+        playerRb = GameObject.Find("player").GetComponent<Rigidbody>();
     }
 
     private void Update()
