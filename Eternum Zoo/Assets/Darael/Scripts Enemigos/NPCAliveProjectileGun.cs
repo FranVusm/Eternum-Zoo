@@ -8,7 +8,7 @@ public class NPCAliveProjectileGun : MonoBehaviour
     public float shootForce, upwardForce;
     public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
     public int magazineSize, bulletsPerTap;
-    public Rigidbody playerRb;
+    private Rigidbody playerRb;
     public float recoilForce;
     public GameObject muzzleFlash;
     public float distanciaMinima = 10f;
@@ -23,6 +23,16 @@ public class NPCAliveProjectileGun : MonoBehaviour
     {
         bulletsLeft = magazineSize;
         readyToShoot = true;
+
+        GameObject playerObject = GameObject.Find("player");
+        if (playerObject != null)
+        {
+            playerRb = playerObject.GetComponent<Rigidbody>();
+        }
+        else
+        {
+            Debug.LogError("No se encontró el objeto con el nombre 'player' en la escena.");
+        }
     }
 
     private void Update()

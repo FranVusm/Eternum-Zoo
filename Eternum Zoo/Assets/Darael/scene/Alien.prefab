@@ -81,9 +81,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vidaMaxima: 100
   vidaActual: 0
-  jugador: {fileID: 8399893983996853630, guid: 14856c8217c981e42b26502ffc804522, type: 3}
   velocidad: 3.5
-  distanciaAcercarMaxima: 10
+  distanciaAcercarMaxima: 50
   "distanciaAcercarM\xEDnima": 1
 --- !u!65 &7420757939235786841
 BoxCollider:
@@ -715,7 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f7d7b4d2bfd914795113e0f5dc4003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 8399893983996853630, guid: 14856c8217c981e42b26502ffc804522, type: 3}
+  nombreJugador: player
   distanciaParaMirar: 25
 --- !u!114 &9175711527526305176
 MonoBehaviour:
@@ -738,8 +737,6 @@ MonoBehaviour:
   timeBetweenShots: 1
   magazineSize: 100
   bulletsPerTap: 1
-  playerRb: {fileID: 7456352077154736099, guid: 14856c8217c981e42b26502ffc804522,
-    type: 3}
   recoilForce: 0
   muzzleFlash: {fileID: 0}
   distanciaMinima: 1
@@ -1470,12 +1467,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 330779865427227382}
   m_SourcePrefab: {fileID: 100100000, guid: f954a48635f9fe141af24fc93c42de39, type: 3}
---- !u!54 &5225649455443150538 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 2000483825846250682, guid: f954a48635f9fe141af24fc93c42de39,
-    type: 3}
-  m_PrefabInstance: {fileID: 6000511105500047984}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5225649455462351144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2000483825864534872, guid: f954a48635f9fe141af24fc93c42de39,
@@ -1509,7 +1500,6 @@ MonoBehaviour:
   timeBetweenShots: 1
   magazineSize: 10
   bulletsPerTap: 1
-  playerRb: {fileID: 5225649455443150538}
   recoilForce: 0
   muzzleFlash: {fileID: 0}
 --- !u!4 &5225649456490000078 stripped

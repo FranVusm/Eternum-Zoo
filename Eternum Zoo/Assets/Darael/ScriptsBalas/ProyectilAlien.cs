@@ -21,7 +21,8 @@ public class ProyectilAlien : MonoBehaviour
                 sistemaVida.RecibirDanio(danio);
             }
             // Destruye el proyectil al impactar con el enemigo
-            Destroy(gameObject);
+            
         }
+        Destroy(gameObject);
     }
 }

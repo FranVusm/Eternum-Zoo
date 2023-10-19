@@ -6,6 +6,7 @@ public class VidaEnemigo : MonoBehaviour
 {
     public float vidaMaxima = 100f;
     public float vidaActual;
+    private Transform jugador; // El objeto Transform del jugador al que nos moveremos
     private GameObject cuteAlien;
     private GameObject cuteAlienRagdoll;
     private GameObject armaAlien;
@@ -16,6 +17,7 @@ public class VidaEnemigo : MonoBehaviour
     private void Start()
     {
         // Buscar los objetos CuteAlien y CuteAlienRagdoll en los hijos del objeto actual
+        jugador = GameObject.Find("player").transform;
         cuteAlien = transform.Find("CuteAlien").gameObject;
         cuteAlienRagdoll = transform.Find("CuteAlienRagdoll").gameObject;
         armaAlien = transform.Find("ArmaAlien").gameObject;
@@ -27,7 +29,7 @@ public class VidaEnemigo : MonoBehaviour
         _boxCollider = GetComponent<BoxCollider>();
     }
 
-    public Transform jugador; // El objeto Transform del jugador al que nos moveremos
+    
     public float velocidad = 3f; // Velocidad a la que nos moveremos hacia el jugador
     public float distanciaAcercarMaxima = 10f;
     public float distanciaAcercarMínima = 1f;
