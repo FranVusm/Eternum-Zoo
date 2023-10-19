@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Ezequiel/AssetsUsados.unity
     guid: b9885243610b6e6479a2332a21c733a4
   - enabled: 1
+    path: Assets/Ezequiel/Escape.unity
+    guid: a1fed8af678a91e4da140b1111ab0893
+  - enabled: 1
+    path: Assets/Ezequiel/GameOver.unity
+    guid: e4a54cf6063f15347864ba1e0e4f2294
+  - enabled: 1
     path: Assets/FPS/Scenes/IntroMenu.unity
     guid: 56e3faabc5bb30f49a68bb8f1292f988
   - enabled: 1

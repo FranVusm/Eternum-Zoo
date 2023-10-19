@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 6618638322522484398}
   - component: {fileID: 5829004759242284384}
   - component: {fileID: 4388856267882700421}
+  - component: {fileID: 3778290691428877210}
   m_Layer: 0
   m_Name: arma 1
   m_TagString: No seleccionable
