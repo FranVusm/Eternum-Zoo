@@ -874,7 +874,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 355232819}
-  - component: {fileID: 355232818}
+  - component: {fileID: 355232820}
   m_Layer: 0
   m_Name: WeaponControlles
   m_TagString: Untagged
@@ -882,19 +882,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &355232818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355232817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f67f4fca47b94f4899e8773c21918e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponPrefab: {fileID: 1345588947}
 --- !u!4 &355232819
 Transform:
   m_ObjectHideFlags: 0
@@ -910,6 +897,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &355232820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355232817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f67f4fca47b94f4899e8773c21918e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accesorios:
+  - {fileID: 2790955230622325696, guid: 2dafc5e53764b704399440c5554acb9f, type: 3}
+  - {fileID: 8702979254342608469, guid: 28d6c1390132d564f86d0858785a249d, type: 3}
+  - {fileID: 7692963204159856555, guid: 81d0868210b1d3e498e40f9f7e25bccf, type: 3}
+  - {fileID: 7694321847384852216, guid: 868b5f64fe93a9944882972b6bab3f3e, type: 3}
+  spauner: ffffffffffffffffffffffffffffffff
 --- !u!224 &362956854 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2096647220959028491, guid: a83f22aa295597a43812e3448a83a89b,
@@ -2138,6 +2143,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83f22aa295597a43812e3448a83a89b, type: 3}
+--- !u!1 &931006711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 336582240668656016, guid: 485112adfa77aa3489bf63245259fd9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1345588946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &942785893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2150,7 +2161,6 @@ GameObject:
   - component: {fileID: 942785896}
   - component: {fileID: 942785895}
   - component: {fileID: 942785894}
-  - component: {fileID: 942785898}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: No seleccionable
@@ -2246,64 +2256,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &942785898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942785893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ae0be42547418e45b6c755407a3940a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arma: {fileID: 0}
-  arma_reset: {fileID: 0}
---- !u!1 &1005558892
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1005558893}
-  - component: {fileID: 1005558894}
-  m_Layer: 0
-  m_Name: ControladorClick
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1005558893
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005558892}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.49118084, y: 0.20388949, z: 6.024227}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1005558894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005558892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6f5dc22c243bc4abddab5fd3bcad4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1015339329
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3258,6 +3210,7 @@ GameObject:
   - component: {fileID: 1310701623}
   - component: {fileID: 1310701622}
   - component: {fileID: 1310701621}
+  - component: {fileID: 1310701624}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3329,7 +3282,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 942785898}
+      - m_Target: {fileID: 1310701624}
         m_TargetAssemblyTypeName: boton_volver, Assembly-CSharp
         m_MethodName: CambiarAScena
         m_Mode: 1
@@ -3379,6 +3332,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310701618}
   m_CullTransparentMesh: 1
+--- !u!114 &1310701624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310701618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae0be42547418e45b6c755407a3940a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arma: {fileID: 1345588947}
+  arma_reset: {fileID: 1023227632214661595, guid: f05d22c328cd4cb438837bc7d86517f5,
+    type: 3}
 --- !u!1 &1340939536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,6 +3574,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.4301
       objectReference: {fileID: 0}
+    - target: {fileID: 4182837108866974258, guid: 485112adfa77aa3489bf63245259fd9d,
+        type: 3}
+      propertyPath: spawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1363316180}
+    - target: {fileID: 4182837108866974258, guid: 485112adfa77aa3489bf63245259fd9d,
+        type: 3}
+      propertyPath: spawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 931006711}
     - target: {fileID: 4449731902932332503, guid: 485112adfa77aa3489bf63245259fd9d,
         type: 3}
       propertyPath: m_TagString
@@ -3620,6 +3598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Seleccionable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824028292368829055, guid: 485112adfa77aa3489bf63245259fd9d,
+        type: 3}
+      propertyPath: m_Name
+      value: cubo_3
       objectReference: {fileID: 0}
     - target: {fileID: 5824028292368829055, guid: 485112adfa77aa3489bf63245259fd9d,
         type: 3}
@@ -3766,6 +3749,12 @@ MonoBehaviour:
   hijo_selec: {fileID: 0}
   objectToSpawn: {fileID: 7692963204159856555, guid: 81d0868210b1d3e498e40f9f7e25bccf,
     type: 3}
+--- !u!1 &1363316180 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8286076874509849852, guid: 485112adfa77aa3489bf63245259fd9d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1345588946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1405073357 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2096647220959028491, guid: a83f22aa295597a43812e3448a83a89b,
@@ -6293,4 +6282,3 @@ SceneRoots:
   - {fileID: 530995050}
   - {fileID: 1345588946}
   - {fileID: 355232819}
-  - {fileID: 1005558893}

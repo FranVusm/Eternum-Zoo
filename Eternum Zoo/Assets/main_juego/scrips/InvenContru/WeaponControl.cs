@@ -4,8 +4,9 @@ public class WeaponControl : MonoBehaviour
 {
     public static WeaponControl Instance;
 
-    public GameObject weaponPrefab; // Referencia al prefab del arma
-
+    public GameObject[] accesorios;
+    public int[]  spauner = new int[4];
+   
     void Awake()
     {
         if (Instance == null)
@@ -16,6 +17,7 @@ public class WeaponControl : MonoBehaviour
         else if (Instance != this)
         {
             Destroy(gameObject);
+             
         }
     }
 }
