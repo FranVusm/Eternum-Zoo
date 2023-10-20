@@ -18,7 +18,7 @@ public class ProjectileGunTutorial : MonoBehaviour
     public GameObject arma_detalles;
     //bullet force
     public float shootForce, upwardForce;
-    public BateriaSlot slots;
+     
     //Gun stats
     private float timeBetweenShooting = 1.0f, spread = 0.5f, reloadTime = 1.5f, timeBetweenShots = 1.0f;
         

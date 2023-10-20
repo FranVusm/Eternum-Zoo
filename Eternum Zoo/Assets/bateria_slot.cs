@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+ 
+
 
 public class BateriaSlot : MonoBehaviour
 {
@@ -27,7 +28,7 @@ public class BateriaSlot : MonoBehaviour
     {
         if (Input.GetKeyDown(spawnKey))
         {
-            
+
 
             Transform hijo = spawn.transform.Find("spawn_1");
             InstanciarYGuardarObjeto(objectToSpawn, hijo, hijo.name);
@@ -40,11 +41,7 @@ public class BateriaSlot : MonoBehaviour
 
             Transform hijo4 = spawn.transform.Find("spawn_4");
             InstanciarYGuardarObjeto(objectToSpawn4, hijo4, hijo4.name);
-
-            GuardarPrefabModificado();
-        }
-        if (Input.GetKeyDown(spawnKey2)){
-            GuardarPrefabModificado();
+ 
         }
     }
 
@@ -57,14 +54,7 @@ public class BateriaSlot : MonoBehaviour
         spawnedObject.transform.parent = spawn.transform.Find(hijo);
     }
     
-
-    public void GuardarPrefabModificado()
-    {
-        string prefabPath = "Assets/Darael/scene/arma 1.prefab";
-
-        // Guardar el objeto spawn como un prefab sin un padre
-        // Esto es un comentario
-        PrefabUtility.SaveAsPrefabAsset(spawn, prefabPath);
-    }
+     
+     
 
 }
