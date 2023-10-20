@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AplicarGravedad : MonoBehaviour
+public class Candado : MonoBehaviour
 {
     private Rigidbody rb;
 
@@ -13,9 +13,10 @@ public class AplicarGravedad : MonoBehaviour
         rb.useGravity = false;
     }
 
-    void OnMouseDown()
+    public void AbrirCandado()
     {
         rb.useGravity = true;
+        rb.constraints = RigidbodyConstraints.None;
         if (objetoARotar1 != null && objetoARotar2 != null)
         {
             objetoARotar1.GetComponent<RotarObjeto>().ActivarRotacion();

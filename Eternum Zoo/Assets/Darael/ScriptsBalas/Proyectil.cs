@@ -24,5 +24,33 @@ public class Proyectil : MonoBehaviour
             // Destruye el proyectil al impactar con el enemigo
             Destroy(gameObject);
         }
+        
+        if (other.CompareTag("NPC"))
+        {
+            Debug.Log("Colision con Enemigo");
+            // Obtén el componente VidaEnemigo del enemigo y reduce su vida
+            Vida_NPC vidaNPC = other.GetComponent<Vida_NPC>();
+            if (vidaNPC != null)
+            {
+                vidaNPC.RecibirDanio(danio);
+            }
+
+            // Destruye el proyectil al impactar con el enemigo
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("Candado"))
+        {
+            Debug.Log("Colision con Candado");
+            // Obtén el componente VidaEnemigo del enemigo y reduce su vida
+            Candado candado = other.GetComponent<Candado>();
+            if (candado != null)
+            {
+                candado.AbrirCandado();
+            }
+
+            // Destruye el proyectil al impactar con el enemigo
+            Destroy(gameObject);
+        }
     }
 }

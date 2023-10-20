@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SistemaVida : MonoBehaviour
 {
@@ -52,7 +53,10 @@ public class SistemaVida : MonoBehaviour
             // Por ejemplo, mostrar un mensaje de game over, reiniciar el nivel, etc.
             // ...
             // Para este ejemplo, simplemente reiniciaremos la vida a la máxima
-            Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            //Destroy(gameObject);
         }
     }
 }

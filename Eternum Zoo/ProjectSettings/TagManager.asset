@@ -10,6 +10,8 @@ TagManager:
   - enemigo
   - Item_seleccionable
   - hola
+  - NPC
+  - Candado
   layers:
   - Default
   - TransparentFX

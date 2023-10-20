@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject objectToSpawn; // Lista de objetos que puedes instanciar
     public Transform[] spawnPoints; // Lista de puntos de spawn
-    public float spawnInterval = 2f; // Intervalo de tiempo en segundos entre las instancias
+    public float spawnInterval = 5f; // Intervalo de tiempo en segundos entre las instancias
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class SpawnManager : MonoBehaviour
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
 
             // Instancia el objeto en el punto de spawn
-            Debug.Log("Se ha instanciado un enemigo");
+            //Debug.Log("Se ha instanciado un enemigo");
             Instantiate(objectToSpawn, spawnPoint.position, spawnPoint.rotation);
 
             // Espera el intervalo de tiempo antes de la próxima instancia
