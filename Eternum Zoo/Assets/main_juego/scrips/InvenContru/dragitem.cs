@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using static UnityEditor.Progress;
+ 
 using System;
 using Unity.Jobs;
 
@@ -13,7 +13,10 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     public Image image;
     [HideInInspector] public Transform parentAfterDrag;
     public Seleccion selc;
-     
+    public GameObject imagen;
+    public GameObject imagen2;
+    public GameObject imagen3;
+    public GameObject imagen4;
     public GameObject objectToSpawn;
     public GameObject objectToSpawn2;
     public GameObject objectToSpawn3;
@@ -33,7 +36,7 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                         break;
                 case "item_cooler":
                     InstanciarYGuardarObjeto(objectToSpawn3, selc.hijo_selec, selc.hijo_selec.name);
-                    print(image.name);
+                     
                     break;
                 case "item_silenciador":
                     if(selc.hijo_selec.name == "cubo")
@@ -53,6 +56,26 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                     break;
                 default:
                      
+                    break;
+            }
+        }
+        if (!selc.enselc)
+        {
+            switch (image.name)
+            {
+                case "item_bateria":
+                    imagen.SetActive(true);
+                    break;
+                case "item_cooler":
+                     imagen2.SetActive(true);
+                    break;
+                case "item_silenciador":
+                    imagen3.SetActive(true);
+                    break;
+                case "item_cargador":
+                    imagen4.SetActive(true);
+                    break;
+                default:
                     break;
             }
         }

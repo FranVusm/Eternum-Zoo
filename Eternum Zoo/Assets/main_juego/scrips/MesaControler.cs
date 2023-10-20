@@ -17,8 +17,9 @@ public class MesaControler : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(transform.position,transform.TransformDirection(Vector3.forward), out hit, distancia, mask))
         {
-            if (hit.collider.tag == "mesa") 
+            if (hit.collider.tag == "mesa")
             {
+                print("XD");
                 if(Input.GetKeyDown(KeyCode.E)) 
                 {
                     hit.collider.transform.GetComponent<mesa_usu>().CambiarAScena();
