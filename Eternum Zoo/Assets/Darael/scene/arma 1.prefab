@@ -270,8 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d00d54dfef9328469fc3543df632f2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selecction: 0
-  enselc: 0
+  selecction: 1
+  enselc: 1
   colorOriginal: {r: 0, g: 1, b: 0.02745098, a: 0}
   spawn: {fileID: 1023227632214661595}
   hijo_selec: {fileID: 3661790900813694386}
