@@ -17,7 +17,7 @@ public class WeaponControl : MonoBehaviour
         else if (Instance != this)
         {
             Destroy(gameObject);
-             
+            Instance= this;
         }
     }
 }

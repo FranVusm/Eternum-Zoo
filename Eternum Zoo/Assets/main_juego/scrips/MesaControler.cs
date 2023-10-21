@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MesaControler : MonoBehaviour
 {
     LayerMask mask;
     public float distancia = 1.5f;
+    public GameObject imagen;
     void Start()
     {
         mask = LayerMask.GetMask("Floor");
@@ -19,13 +21,17 @@ public class MesaControler : MonoBehaviour
         {
             if (hit.collider.tag == "mesa")
             {
-                print("XD");
-                if(Input.GetKeyDown(KeyCode.E)) 
+                 imagen.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E)) 
                 {
                     hit.collider.transform.GetComponent<mesa_usu>().CambiarAScena();
                     Cursor.lockState = CursorLockMode.None;
                 }
             }
+        }
+        else
+        {
+            imagen.SetActive(false);
         }
     }
 }
