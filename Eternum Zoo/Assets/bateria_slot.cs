@@ -11,9 +11,9 @@ public class BateriaSlot : MonoBehaviour
     public GameObject objectToSpawn3;
     public GameObject objectToSpawn4;
     public KeyCode spawnKey;
-    public KeyCode spawnKey2;
+     
     public GameObject spawn;
-
+    private Vector3 posicionInicial;
     [System.Serializable]
     public class SpawnedObjectData
     {
@@ -23,27 +23,8 @@ public class BateriaSlot : MonoBehaviour
     }
 
     private List<SpawnedObjectData> spawnedObjectsData = new List<SpawnedObjectData>();
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(spawnKey))
-        {
-
-
-            Transform hijo = spawn.transform.Find("spawn_1");
-            InstanciarYGuardarObjeto(objectToSpawn, hijo, hijo.name);
-
-            Transform hijo2 = spawn.transform.Find("spawn_2");
-            InstanciarYGuardarObjeto(objectToSpawn2, hijo2, hijo2.name);
-
-            Transform hijo3 = spawn.transform.Find("spawn_3");
-            InstanciarYGuardarObjeto(objectToSpawn3, hijo3, hijo3.name);
-
-            Transform hijo4 = spawn.transform.Find("spawn_4");
-            InstanciarYGuardarObjeto(objectToSpawn4, hijo4, hijo4.name);
- 
-        }
-    }
+    
+    
 
 
     public void InstanciarYGuardarObjeto(GameObject objetoPrefab, Transform spawnTransform, string hijo)

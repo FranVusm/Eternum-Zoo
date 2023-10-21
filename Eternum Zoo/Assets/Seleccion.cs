@@ -33,35 +33,32 @@ public class Seleccion : MonoBehaviour
             {
                 
                 // Verificar si el objeto golpeado es una instancia del prefab.
-                if ((hit.transform.IsChildOf(spawn.transform)) || hit.collider.tag == "No Seleccionable")
+                if (((hit.transform.IsChildOf(spawn.transform)) || hit.collider.tag == "No Seleccionable"))
                 {
                     // Obtener el hijo que fue seleccionado.
+                    if (enselc)
+                    {
+                        hijo_selec1.GetComponent<Renderer>().material.color = colorOriginal;
+                        selecction = !selecction;
+                        enselc = false;
+                    }
                     Transform hijoSeleccionado = hit.transform;
                     hijo_selec = hijoSeleccionado;
-
-                    if (CumpleConCriterios(hijoSeleccionado))
+                    
+                    if ((CumpleConCriterios(hijoSeleccionado)& !enselc))
                     {
                         // Cambiar el estado de selección.
-                        selecction = !selecction;
-                        enselc = !enselc;
+                         
+                        enselc = true;
                         hijo_selec = hijoSeleccionado;
                         hijo_selec1 = hijoSeleccionado;
 
                         // Cambiar el color del hijo seleccionado.
-                        if (selecction)
-                        {
-                            hijoSeleccionado.GetComponent<Renderer>().material.color = Color.red; // Color de selección.
-                             
-                        }
+                         hijoSeleccionado.GetComponent<Renderer>().material.color = Color.red; // Color de selección.
+                         
+                          
                     }
-                    if (!CumpleConCriterios(hijoSeleccionado) & enselc) 
-                    {
-
-                        hijo_selec1.GetComponent<Renderer>().material.color = colorOriginal;
-                        selecction = !selecction;
-                        enselc = !enselc;
-
-                    }
+                    
                 }
                
             }
