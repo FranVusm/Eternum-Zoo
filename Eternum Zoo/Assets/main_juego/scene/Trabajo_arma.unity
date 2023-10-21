@@ -641,7 +641,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Volver Menu
+  m_text: 'Volver
 
 '
   m_isRightToLeft: 0
@@ -3344,9 +3344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae0be42547418e45b6c755407a3940a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arma: {fileID: 1345588947}
-  arma_reset: {fileID: 1023227632214661595, guid: f05d22c328cd4cb438837bc7d86517f5,
-    type: 3}
 --- !u!1 &1340939536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,8 +3817,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 258.5, y: 3}
-  m_SizeDelta: {x: 187.89001, y: 394.604}
+  m_AnchoredPosition: {x: 258.5, y: -26.402}
+  m_SizeDelta: {x: 187.89, y: 366.332}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!114 &1486419637
 MonoBehaviour:

@@ -6,7 +6,7 @@ public class Candado : MonoBehaviour
 
     public GameObject objetoARotar1; // Referencia al objeto que quieres rotar
      public GameObject objetoARotar2;
-
+    public bool inicia = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -15,6 +15,7 @@ public class Candado : MonoBehaviour
 
     public void AbrirCandado()
     {
+        inicia = true;
         rb.useGravity = true;
         rb.constraints = RigidbodyConstraints.None;
         if (objetoARotar1 != null && objetoARotar2 != null)

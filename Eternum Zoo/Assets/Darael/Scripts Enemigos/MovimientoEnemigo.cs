@@ -9,6 +9,7 @@ public class MovimientoEnemigo : MonoBehaviour
 
     void Update()
     {
+        
         // Buscar el objeto del jugador por su nombre
         GameObject jugadorObject = GameObject.Find(nombreJugador);
 

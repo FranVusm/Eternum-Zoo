@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: velocidad
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5869074565401416334, guid: 18827ab07b04aba4cb5e442b38fb2911,
+        type: 3}
+      propertyPath: distanciaAcercarMaxima
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6077459137115892268, guid: 18827ab07b04aba4cb5e442b38fb2911,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 6857755747399465111, guid: 18827ab07b04aba4cb5e442b38fb2911,
         type: 3}
       propertyPath: m_Name
-      value: Alien Variant
+      value: AlienQuieto
       objectReference: {fileID: 0}
     - target: {fileID: 8133943585551422587, guid: 18827ab07b04aba4cb5e442b38fb2911,
         type: 3}
@@ -87,6 +92,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175711527526305176, guid: 18827ab07b04aba4cb5e442b38fb2911,
+        type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175711527526305176, guid: 18827ab07b04aba4cb5e442b38fb2911,
+        type: 3}
+      propertyPath: timeBetweenShooting
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

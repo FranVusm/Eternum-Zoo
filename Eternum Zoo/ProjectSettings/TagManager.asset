@@ -12,6 +12,7 @@ TagManager:
   - hola
   - NPC
   - Candado
+  - puerta
   layers:
   - Default
   - TransparentFX

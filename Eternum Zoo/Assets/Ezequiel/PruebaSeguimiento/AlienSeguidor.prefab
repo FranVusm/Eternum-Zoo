@@ -8,6 +8,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5869074565401416334, guid: 18827ab07b04aba4cb5e442b38fb2911,
+        type: 3}
+      propertyPath: velocidad
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5869074565401416334, guid: 18827ab07b04aba4cb5e442b38fb2911,
+        type: 3}
+      propertyPath: distanciaAcercarMaxima
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6077459137115892268, guid: 18827ab07b04aba4cb5e442b38fb2911,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -103,6 +113,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9175711527526305176, guid: 18827ab07b04aba4cb5e442b38fb2911,
+        type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9175711527526305176, guid: 18827ab07b04aba4cb5e442b38fb2911,
+        type: 3}
+      propertyPath: timeBetweenShooting
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8169780135668011674, guid: 18827ab07b04aba4cb5e442b38fb2911, type: 3}
     m_RemovedGameObjects: []
@@ -150,7 +170,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

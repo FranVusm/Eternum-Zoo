@@ -11,7 +11,7 @@ public class VidaEnemigo : MonoBehaviour
     private GameObject cuteAlienRagdoll;
     private GameObject armaAlien;
     private bool firstime = true;
-
+    public Candado inicio;
     private BoxCollider _boxCollider;
 
     private void Start()
@@ -37,19 +37,25 @@ public class VidaEnemigo : MonoBehaviour
     private bool muerto = false;
     void Update()
     {
-        // Verificar si el jugador está a una distancia mayor o igual a 50 unidades
-        float distanciaAlJugador = Vector3.Distance(transform.position, jugador.position);
-        if (distanciaAlJugador <= distanciaAcercarMaxima && distanciaAlJugador >= distanciaAcercarMínima && !muerto)
-        {
-            // Calcular la dirección hacia el jugador
-            Vector3 direccionAlJugador = (jugador.position - transform.position).normalized;
 
-            RaycastHit hit;
-            
-                    // Mover el NPC hacia el jugador solo si no hay obstáculos debajo
-            transform.Translate(direccionAlJugador * velocidad * Time.deltaTime);
-        
+        inicio = FindAnyObjectByType<Candado>();
+        if (inicio.inicia)
+        {
+            float distanciaAlJugador = Vector3.Distance(transform.position, jugador.position);
+            if (distanciaAlJugador <= distanciaAcercarMaxima && distanciaAlJugador >= distanciaAcercarMínima && !muerto)
+            {
+                // Calcular la dirección hacia el jugador
+                Vector3 direccionAlJugador = (jugador.position - transform.position).normalized;
+
+                 
+
+                // Mover el NPC hacia el jugador solo si no hay obstáculos debajo
+                transform.Translate(direccionAlJugador * velocidad * Time.deltaTime);
+
+            }
         }
+        // Verificar si el jugador está a una distancia mayor o igual a 50 unidades
+        
     }
 
     public void RecibirDanio(float cantidadDanio)

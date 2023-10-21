@@ -14,7 +14,7 @@ public class NPCAliveProjectileGun : MonoBehaviour
     public float distanciaMinima = 10f;
     public float distanciaMaxima = 50f;
     public Transform bulletSpawnPoint; // Punto de spawn de las balas
-
+    public Candado inicio;
     int bulletsLeft, bulletsShot;
     bool readyToShoot, reloading;
     bool allowInvoke = true;
@@ -37,18 +37,23 @@ public class NPCAliveProjectileGun : MonoBehaviour
 
     private void Update()
     {
-        // Calcular la distancia al jugador
-        float distanciaAlJugador = Vector3.Distance(transform.position, playerRb.position);
-
-        // Comprobar si el NPC está dentro del rango de disparo
-        if (distanciaAlJugador >= distanciaMinima && distanciaAlJugador <= distanciaMaxima)
+        inicio = FindAnyObjectByType<Candado>();
+        if (inicio.inicia)
         {
-            // Apuntar hacia el jugador
-            Vector3 directionToPlayer = (playerRb.position - bulletSpawnPoint.position).normalized;
-            transform.rotation = Quaternion.LookRotation(directionToPlayer, Vector3.up);
+            float distanciaAlJugador = Vector3.Distance(transform.position, playerRb.position);
 
-            MyInput();
+            // Comprobar si el NPC está dentro del rango de disparo
+            if (distanciaAlJugador >= distanciaMinima && distanciaAlJugador <= distanciaMaxima)
+            {
+                // Apuntar hacia el jugador
+                Vector3 directionToPlayer = (playerRb.position - bulletSpawnPoint.position).normalized;
+                transform.rotation = Quaternion.LookRotation(directionToPlayer, Vector3.up);
+
+                MyInput();
+            }
         }
+            // Calcular la distancia al jugador
+        
     }
 
     private void MyInput()

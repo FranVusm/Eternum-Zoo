@@ -7,7 +7,9 @@ public class MesaControler : MonoBehaviour
 {
     LayerMask mask;
     public float distancia = 1.5f;
+    public float distancia_candado = 4f;
     public GameObject imagen;
+    public GameObject imagen_candado;   
     void Start()
     {
         mask = LayerMask.GetMask("Floor");
@@ -28,10 +30,18 @@ public class MesaControler : MonoBehaviour
                     Cursor.lockState = CursorLockMode.None;
                 }
             }
+            else if(hit.collider.tag == "puerta")
+            {
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distancia_candado, mask))
+                {
+                    imagen_candado.SetActive(true);
+                }
+            }
         }
         else
         {
             imagen.SetActive(false);
+            imagen_candado.SetActive(false);
         }
     }
 }

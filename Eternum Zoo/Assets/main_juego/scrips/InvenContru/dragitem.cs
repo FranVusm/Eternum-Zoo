@@ -36,11 +36,12 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         transform.SetAsLastSibling();
         selc = FindAnyObjectByType<Seleccion>();
 
-        string[] splitcell = selc.hijo_selec.name.Split('_');
-        print(splitcell);
-        int spawn_id = int.Parse(splitcell[1]) - 1;
+        
+         
         if (selc.enselc)
         {
+            string[] splitcell = selc.hijo_selec.name.Split('_');
+            int spawn_id = int.Parse(splitcell[1]) - 1;
             switch (image.name)
             {
                 case "item_bateria":
@@ -76,7 +77,7 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                     break;
             }
         }
-        if (!selc.enselc)
+        else if (!selc.enselc)
         {
             switch (image.name)
             {
