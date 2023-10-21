@@ -20,7 +20,7 @@ public class ProjectileGunTutorial : MonoBehaviour
     public float shootForce, upwardForce;
      
     //Gun stats
-    private float timeBetweenShooting = 1.0f, spread = 0.5f, reloadTime = 1.5f, timeBetweenShots = 1.0f;
+    private float timeBetweenShooting = 0.7f, spread = 0.5f, reloadTime = 1.5f, timeBetweenShots = 0.7f;
         
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;
