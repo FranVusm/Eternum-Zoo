@@ -3786,6 +3786,7 @@ GameObject:
   - component: {fileID: 1486419639}
   - component: {fileID: 1486419638}
   - component: {fileID: 1486419637}
+  - component: {fileID: 1486419640}
   m_Layer: 5
   m_Name: bar
   m_TagString: No seleccionable
@@ -3892,6 +3893,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486419635}
   m_CullTransparentMesh: 1
+--- !u!114 &1486419640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486419635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7a49e645ff70644a33698298df5e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1522607899 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2096647220959028491, guid: a83f22aa295597a43812e3448a83a89b,
@@ -5829,7 +5842,7 @@ PrefabInstance:
     - target: {fileID: 2532903779890506649, guid: a8eb8b962481105488b09be2cd95dd1f,
         type: 3}
       propertyPath: m_TagString
-      value: Item_seleccionable
+      value: hola
       objectReference: {fileID: 0}
     - target: {fileID: 5689087358824416263, guid: a8eb8b962481105488b09be2cd95dd1f,
         type: 3}
