@@ -223,10 +223,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1537962127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -44, y: -48}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0.34749857, y: 0.83341473}
+  m_AnchorMax: {x: 0.65259266, y: 0.9482441}
+  m_AnchoredPosition: {x: -44, y: -6}
+  m_SizeDelta: {x: -92, y: 6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &979055124
 MonoBehaviour:
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.85
+  m_fontSize: 33.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -89.64673, w: 0}
+  m_margin: {x: 0, y: -4.0195312, z: -89.64673, w: 10.71875}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -357,10 +357,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1537962127}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.5}
-  m_SizeDelta: {x: 202, y: 47}
+  m_AnchorMin: {x: 0.032501467, y: 0.27758533}
+  m_AnchorMax: {x: 0.957, y: 0.85934126}
+  m_AnchoredPosition: {x: 5, y: -27}
+  m_SizeDelta: {x: -682, y: -178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &980689665
 MonoBehaviour:
@@ -384,7 +384,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Aqui comienza tu aventura, el zoologico solo fue el principio, ahora deberas
     llegar a la base militar pasando por ciudades, valles, carreteras y m\xE1s, para
-    asi tomar una nave y escapar. \n\xA1Gracias por jugar a la Alpha\xA1  "
+    asi tomar una nave y escapar. \n\xA1Gracias por jugar a la Alpha!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36.25
+  m_fontSize: 42.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

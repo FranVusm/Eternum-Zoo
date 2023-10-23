@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Ezequiel/PruebaSeguimiento/PruebaSeguimiento.unity
+    guid: 6b87ce877126e484fa50b2d9eb88ab13
   - enabled: 1
     path: Assets/Ezequiel/Pantalla Inicio.unity
     guid: db1f3e594aff9b246b4f3c8ce7c01031

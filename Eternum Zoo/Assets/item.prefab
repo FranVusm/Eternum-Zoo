@@ -88,5 +88,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a4630a3401d074ea11938b9a2cc585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawn: {fileID: 0}
   image: {fileID: 4338401548451248110}
   parentAfterDrag: {fileID: 0}
+  selc: {fileID: 0}
+  imagen: {fileID: 0}
+  imagen2: {fileID: 0}
+  imagen3: {fileID: 0}
+  imagen4: {fileID: 0}
+  objectToSpawn: {fileID: 0}
+  objectToSpawn2: {fileID: 0}
+  objectToSpawn3: {fileID: 0}
+  objectToSpawn4: {fileID: 0}
+  instancia1: 0
+  instancia2: 0
+  instancia3: 0
+  instancia3_1: 0
+  instancia4: 0
