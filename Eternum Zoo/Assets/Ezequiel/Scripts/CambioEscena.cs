@@ -10,6 +10,10 @@ public class CambioEscena : MonoBehaviour
     {
         SceneManager.LoadScene("NivelZoo");
     }
+    public void ToCity()
+    {
+        SceneManager.LoadScene("NivelCiudad");
+    }
     public void ToMenu()
     {
         SceneManager.LoadScene("Pantalla Inicio");

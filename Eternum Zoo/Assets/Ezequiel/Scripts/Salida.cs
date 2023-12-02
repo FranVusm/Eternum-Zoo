@@ -10,7 +10,7 @@ public class Salida : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Cambiamos a la escena deseada. En este ejemplo, cambiamos a la escena "NuevaEscena".
-            SceneManager.LoadScene("Escape");
+            SceneManager.LoadScene("NivelCiudad");
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
