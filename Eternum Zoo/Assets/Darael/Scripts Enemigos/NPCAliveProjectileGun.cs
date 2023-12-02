@@ -15,7 +15,7 @@ public class NPCAliveProjectileGun : MonoBehaviour
     public float distanciaMaxima = 50f;
     public Transform bulletSpawnPoint; // Punto de spawn de las balas
     public Candado inicio;
-    int bulletsLeft, bulletsShot;
+    public int bulletsLeft, bulletsShot;
     bool readyToShoot, reloading;
     bool allowInvoke = true;
 
@@ -101,6 +101,8 @@ public class NPCAliveProjectileGun : MonoBehaviour
 
         bulletsLeft--;
         bulletsShot++;
+
+        Debug.Log("estoy disparando");
 
         if (allowInvoke)
         {
