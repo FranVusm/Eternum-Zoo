@@ -163,8 +163,11 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                                 WeaponControl.Instance.spauner_esco[spawn_id] = 0;
                                 break;
                         }break;
-                        
-                     
+                    case "item_estabil":
+                        InstanciarYGuardarObjeto(objectToSpawn7, hit.transform, hit.transform.name);
+                        WeaponControl.Instance.spauner_esco[spawn_id] = 3;
+                        break;
+
                     default:
 
                         break;
