@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using System;
 using Unity.Jobs;
 using UnityEngine.Rendering;
+using System.Net;
 
 public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -22,6 +23,9 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     public GameObject objectToSpawn2;
     public GameObject objectToSpawn3;
     public GameObject objectToSpawn4;
+    public GameObject objectToSpawn5;
+    public GameObject objectToSpawn6;
+    public GameObject objectToSpawn7;
     public bool  instancia1 = false;
     public bool instancia2 = false;
     public bool instancia3 = false;
@@ -36,7 +40,7 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
         selc = FindAnyObjectByType<Seleccion>();
-
+        
         switch (image.name)
         {
             case "item_bateria":
@@ -50,6 +54,11 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                 break;
             case "item_cargador":
                 imagen4.SetActive(true);
+                break;
+            case "item_bala":
+                break;
+            case "item_can":
+           
                 break;
             default:
                 break;
@@ -80,6 +89,10 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
             case "item_cargador":
                 imagen4.SetActive(false);
                 break;
+            case "item_bala":
+                break;
+            case "item_can":
+                break;
             default:
                 break;
         }
@@ -89,7 +102,7 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         {
             if ((hit.transform.IsChildOf(spawn.transform)) & hit.collider.tag == "Seleccionable")
             {
-                 
+                print(hit.transform.name);
                 string[] splitcell = hit.transform.name.Split('_');
                 int spawn_id = int.Parse(splitcell[1]) - 1;
                 switch (image.name)
@@ -122,6 +135,36 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                         InstanciarYGuardarObjeto(objectToSpawn2, hit.transform, hit.transform.name);
                         WeaponControl.Instance.spauner[spawn_id] = 2;
                         break;
+                    case "item_can":
+                        print("hola");
+                        InstanciarYGuardarObjeto(objectToSpawn6, hit.transform, hit.transform.name);
+                        WeaponControl.Instance.spauner_esco[spawn_id] = 1;
+                        break;
+                    case "item_bala":
+                        switch (hit.transform.name)
+                        {
+                            case "spawnesco_1":
+                                Transform hijo4 = spawn.transform.Find("arreglo_1");
+                                InstanciarYGuardarObjeto(objectToSpawn5, hijo4, hit.transform.name);
+                                WeaponControl.Instance.spauner_esco[spawn_id] = 0;
+                                break;
+                            case "spawnesco_2":
+                                Transform hijo5 = spawn.transform.Find("arreglo_2");
+                                InstanciarYGuardarObjeto(objectToSpawn5, hijo5, hit.transform.name);
+                                WeaponControl.Instance.spauner_esco[spawn_id] = 0;
+                                break;
+                            case "spawnesco_3":
+                                Transform hijo6 = spawn.transform.Find("arreglo_3");
+                                InstanciarYGuardarObjeto(objectToSpawn5, hijo6, hit.transform.name);
+                                WeaponControl.Instance.spauner_esco[spawn_id] = 0;
+                                break;
+                            default:
+                                InstanciarYGuardarObjeto(objectToSpawn5, hit.transform, hit.transform.name);
+                                WeaponControl.Instance.spauner_esco[spawn_id] = 0;
+                                break;
+                        }break;
+                        
+                     
                     default:
 
                         break;
