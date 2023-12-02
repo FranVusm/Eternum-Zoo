@@ -7,22 +7,27 @@ public class SerieParaleloSwitchButton : MonoBehaviour
 {
     public Image On;
     public Image Off;
-    public Image img;
+    public GameObject Paralelo;
+    public GameObject Serie;
+
     int index;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Paralelo.gameObject.SetActive(false);
+        Serie.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
         if(index==1){
-            img.gameObject.SetActive(false);
+            Serie.gameObject.SetActive(false);
+            Paralelo.gameObject.SetActive(true);
         }
         if(index==0){
-            img.gameObject.SetActive(true);
+            Serie.gameObject.SetActive(true);
+            Paralelo.gameObject.SetActive(false);
         }    
     }
 
