@@ -1819,7 +1819,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1831477305}
-  - {fileID: 1096142980}
   - {fileID: 757296544}
   - {fileID: 1693266971}
   m_Father: {fileID: 1935203145}
@@ -2899,6 +2898,7 @@ RectTransform:
   - {fileID: 112800067}
   - {fileID: 814352936}
   - {fileID: 1654601646}
+  - {fileID: 620643928}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3888,7 +3888,7 @@ MonoBehaviour:
   arma2: {fileID: 8203404137834087235}
   imagenesArma1:
   - {fileID: 1405073360}
-  - {fileID: 1934505463}
+  - {fileID: 1682174851}
   - {fileID: 722879103}
   - {fileID: 1165141808}
   imagenesArma2:
@@ -5856,6 +5856,18 @@ PrefabInstance:
       addedObject: {fileID: 1116462079}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a83f22aa295597a43812e3448a83a89b, type: 3}
+--- !u!114 &1682174851 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1595708626036743608, guid: a83f22aa295597a43812e3448a83a89b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1751203347}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1693266970
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,7 +6020,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 362956854}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7052,7 +7064,6 @@ RectTransform:
   - {fileID: 7669498}
   - {fileID: 814440420}
   - {fileID: 564301134}
-  - {fileID: 1146724821}
   - {fileID: 641913227}
   m_Father: {fileID: 1160902450}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8597,3 +8608,4 @@ SceneRoots:
   - {fileID: 1345588946}
   - {fileID: 3086977375455205729}
   - {fileID: 355232819}
+  - {fileID: 1733852494}
