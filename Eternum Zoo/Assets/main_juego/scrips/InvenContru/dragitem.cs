@@ -56,9 +56,10 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                 imagen4.SetActive(true);
                 break;
             case "item_bala":
+                
                 break;
             case "item_can":
-           
+                print(image.name);
                 break;
             default:
                 break;
@@ -93,6 +94,8 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                 break;
             case "item_can":
                 break;
+            case "item_estabil":
+                break;
             default:
                 break;
         }
@@ -102,9 +105,10 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         {
             if ((hit.transform.IsChildOf(spawn.transform)) & hit.collider.tag == "Seleccionable")
             {
-                print(hit.transform.name);
+                
                 string[] splitcell = hit.transform.name.Split('_');
                 int spawn_id = int.Parse(splitcell[1]) - 1;
+                
                 switch (image.name)
                 {
                     case "item_bateria":
@@ -131,20 +135,18 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
                         break;
                     case "item_cargador":
-
                         InstanciarYGuardarObjeto(objectToSpawn2, hit.transform, hit.transform.name);
                         WeaponControl.Instance.spauner[spawn_id] = 2;
                         break;
-                    case "item_can":
-                        print("hola");
-                        InstanciarYGuardarObjeto(objectToSpawn6, hit.transform, hit.transform.name);
-                        WeaponControl.Instance.spauner_esco[spawn_id] = 1;
-                        break;
+                    
+                        
                     case "item_bala":
+                   
                         switch (hit.transform.name)
                         {
                             case "spawnesco_1":
                                 Transform hijo4 = spawn.transform.Find("arreglo_1");
+               
                                 InstanciarYGuardarObjeto(objectToSpawn5, hijo4, hit.transform.name);
                                 WeaponControl.Instance.spauner_esco[spawn_id] = 0;
                                 break;
@@ -163,8 +165,10 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                                 WeaponControl.Instance.spauner_esco[spawn_id] = 0;
                                 break;
                         }break;
-                        
-                     
+                    case "item_bateria_esco":
+                        InstanciarYGuardarObjeto(objectToSpawn7, hit.transform, hit.transform.name);
+                        WeaponControl.Instance.spauner_esco[spawn_id] = 1;
+                        break;  
                     default:
 
                         break;
