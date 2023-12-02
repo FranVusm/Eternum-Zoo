@@ -19,7 +19,7 @@ public class escopeta : MonoBehaviour
             {
                 continue;
             }
-            print(spawn_content[i]);
+            
             Vector3 spawnPosition = spawn[i].transform.position;
             Quaternion spawnRotation = spawn[i].transform.rotation;
 
