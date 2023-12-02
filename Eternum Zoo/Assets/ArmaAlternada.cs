@@ -1,15 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArmaAlternada : MonoBehaviour
 {
     public GameObject arma1;
     public GameObject arma2;
 
+    public Image[] imagenesArma1; // Imágenes asociadas al arma 1
+    public Image[] imagenesArma2; // Imágenes asociadas al arma 2
+
     void Start()
     {
-        // Empezamos mostrando el arma 1 y ocultando el arma 2
         MostrarArma1();
         OcultarArma2();
+        CambiarColorImagenes(imagenesArma1, Color.green);
+        CambiarColorImagenes(imagenesArma2, Color.red);
     }
 
     void Update()
@@ -18,11 +23,15 @@ public class ArmaAlternada : MonoBehaviour
         {
             MostrarArma1();
             OcultarArma2();
+            CambiarColorImagenes(imagenesArma1, Color.green);
+            CambiarColorImagenes(imagenesArma2, Color.red);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             MostrarArma2();
             OcultarArma1();
+            CambiarColorImagenes(imagenesArma1, Color.red);
+            CambiarColorImagenes(imagenesArma2, Color.green);
         }
     }
 
@@ -45,4 +54,14 @@ public class ArmaAlternada : MonoBehaviour
     {
         arma2.SetActive(false);
     }
+
+    // Función para cambiar el color de las imágenes
+    void CambiarColorImagenes(Image[] imagenes, Color color)
+    {
+        foreach (Image imagen in imagenes)
+        {
+            imagen.color = color;
+        }
+    }
 }
+
