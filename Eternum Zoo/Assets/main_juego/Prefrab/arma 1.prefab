@@ -177,7 +177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ee011a8a19ea1b4eb178c5c347e11cf, type: 2}
+  - {fileID: 2100000, guid: cba2fb0122fff8a40a79f2e6c4f5a6e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -254,7 +254,6 @@ MonoBehaviour:
   objectToSpawn4: {fileID: 2790955230622325696, guid: 2dafc5e53764b704399440c5554acb9f,
     type: 3}
   spawnKey: 9
-  spawnKey2: 0
   spawn: {fileID: 2432918447512258530}
 --- !u!114 &9148385046580372739
 MonoBehaviour:
@@ -354,7 +353,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ee011a8a19ea1b4eb178c5c347e11cf, type: 2}
+  - {fileID: 2100000, guid: d3966d64f74895944a6f58bdfdc47d41, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
