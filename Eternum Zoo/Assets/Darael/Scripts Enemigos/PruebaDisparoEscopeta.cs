@@ -20,7 +20,7 @@ public class PruebaDisparoEscopeta : MonoBehaviour
     public float shootForce, upwardForce;
 
     //Gun stats
-    private float timeBetweenShooting = 0.7f, spread = 0.5f, reloadTime = 1.5f, timeBetweenShots = 0.7f;
+    private float timeBetweenShooting = 0.7f, spread = 0.8f, reloadTime = 1.5f, timeBetweenShots = 0.7f;
 
     public int magazineSize, bulletsPerTap;
     public bool allowButtonHold;

@@ -166,9 +166,30 @@ public class dragitem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
                                 break;
                         }break;
                     case "item_bateria_esco":
-                        InstanciarYGuardarObjeto(objectToSpawn7, hit.transform, hit.transform.name);
-                        WeaponControl.Instance.spauner_esco[spawn_id] = 1;
-                        break;  
+                        switch (hit.transform.name)
+                        {
+                            case "spawnesco_1":
+                                Transform hijo7 = spawn.transform.Find("arreglo_1");
+
+                                InstanciarYGuardarObjeto(objectToSpawn7, hijo7, hit.transform.name);
+                                WeaponControl.Instance.spauner_esco[spawn_id] = 1;
+                                break;
+                            case "spawnesco_2":
+                                Transform hijo8 = spawn.transform.Find("arreglo_2");
+                                InstanciarYGuardarObjeto(objectToSpawn7, hijo8, hit.transform.name);
+                                WeaponControl.Instance.spauner_esco[spawn_id] = 1;
+                                break;
+                            case "spawnesco_3":
+                                Transform hijo9 = spawn.transform.Find("arreglo_3");
+                                InstanciarYGuardarObjeto(objectToSpawn7, hijo9, hit.transform.name);
+                                WeaponControl.Instance.spauner_esco[spawn_id] = 1;
+                                break;
+                            default:
+                                InstanciarYGuardarObjeto(objectToSpawn7, hit.transform, hit.transform.name);
+                                WeaponControl.Instance.spauner_esco[spawn_id] = 1;
+                                break;
+                        }
+                        break;
                     default:
 
                         break;
