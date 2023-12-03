@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Ezequiel/NivelCiudad.unity
     guid: 98bc300c8f69d444693cf33435e2dc1f
+  - enabled: 1
+    path: Assets/Ezequiel/NivelBaseMilitar.unity
+    guid: dcf0b06cf108bb3478dfc39d3f69ac3e
   m_configObjects: {}
