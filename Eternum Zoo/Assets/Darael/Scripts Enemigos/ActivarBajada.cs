@@ -15,13 +15,13 @@ public class ActivarBajada : MonoBehaviour
     public GameObject objetoASubir9;
     public GameObject objetoASubir10;
 
-    public VidaEnemigo vida;
+    public VidaJefe vida;
 
     void Update(){
 
-        vida = FindAnyObjectByType<VidaEnemigo>();
+        vida = FindAnyObjectByType<VidaJefe>();
 
-        Debug.Log(vida.vidaActual);
+        //Debug.Log(vida.vidaActual);
 
         if (vida.vidaActual < 1)
         {

@@ -35,7 +35,7 @@ public class ProyectilAlien : MonoBehaviour
 
         }
 
-        if (!other.CompareTag("Player"))
+        else if (!other.CompareTag("Player"))
         {
             Destroy(gameObject);    
         }
