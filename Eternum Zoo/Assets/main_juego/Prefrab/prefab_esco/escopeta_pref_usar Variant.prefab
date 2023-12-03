@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: escopeta_pref_usar Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2913980255521107539, guid: 0427b748a437d03409167b74e1b4034a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f5d5c7b558cfcc4296df1f1e65bff1b, type: 2}
     - target: {fileID: 4100994159585837471, guid: 0427b748a437d03409167b74e1b4034a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -63,6 +68,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 4339783049218165046, guid: 0427b748a437d03409167b74e1b4034a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 18c59970f6249c54d94ad52350f242cd, type: 2}
     - target: {fileID: 4465879676014986040, guid: 0427b748a437d03409167b74e1b4034a,
         type: 3}
       propertyPath: spawn.Array.size
@@ -118,6 +128,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6199301294534846665, guid: 0427b748a437d03409167b74e1b4034a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9f5d5c7b558cfcc4296df1f1e65bff1b, type: 2}
     - target: {fileID: 6710404252076314630, guid: 0427b748a437d03409167b74e1b4034a,
         type: 3}
       propertyPath: m_LocalScale.x
