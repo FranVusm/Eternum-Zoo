@@ -9,22 +9,39 @@ public class ProyectilAlien : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       // Debug.Log("Colisión con Algo");
-        // Verifica si el objeto con el que colisionó tiene el tag "Player"
+        
+        // Verifica si el objeto con el que colisionó tiene el tag "enemigo"
+        if (other.CompareTag("enemigo"))
+        {
+            
+            Destroy(gameObject);
+        }
+
+        if (other.CompareTag("NPC"))
+        {
+             
+            Destroy(gameObject);
+        }
         if (other.CompareTag("Player"))
         {
-         //   Debug.Log("Colisión con Jugador");
-            
+
             SistemaVida sistemaVida = other.GetComponent<SistemaVida>();
             if (sistemaVida != null)
             {
                 sistemaVida.RecibirDanio(danio);
+                Destroy(gameObject);
             }
             // Destruye el proyectil al impactar con el enemigo
-            
+
+
+
         }
-        if (!other.CompareTag("enemigo")){
+
+        if (other.CompareTag("Candado"))
+        {
+             
             Destroy(gameObject);
         }
+
     }
 }
