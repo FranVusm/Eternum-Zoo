@@ -18,7 +18,7 @@ public class NPCAliveProjectileGun : MonoBehaviour
     public int bulletsLeft, bulletsShot;
     bool readyToShoot, reloading;
     bool allowInvoke = true;
-
+    public bool confirma_2 = false;
     private void Awake()
     {
         bulletsLeft = magazineSize;
@@ -37,8 +37,24 @@ public class NPCAliveProjectileGun : MonoBehaviour
 
     private void Update()
     {
+       
         inicio = FindAnyObjectByType<Candado>();
-        if (inicio.inicia)
+        
+        if (confirma_2)
+        {
+            float distanciaAlJugador = Vector3.Distance(transform.position, playerRb.position);
+
+            // Comprobar si el NPC está dentro del rango de disparo
+            if (distanciaAlJugador >= distanciaMinima && distanciaAlJugador <= distanciaMaxima)
+            {
+                // Apuntar hacia el jugador
+                Vector3 directionToPlayer = (playerRb.position - bulletSpawnPoint.position).normalized;
+                transform.rotation = Quaternion.LookRotation(directionToPlayer, Vector3.up);
+
+                MyInput();
+            }
+        }
+        else if (inicio.inicia)
         {
             float distanciaAlJugador = Vector3.Distance(transform.position, playerRb.position);
 
