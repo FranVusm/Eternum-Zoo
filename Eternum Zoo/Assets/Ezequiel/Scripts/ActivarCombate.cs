@@ -17,6 +17,7 @@ public class ActivarCombate : MonoBehaviour
     public GameObject objetoASubir11;
 
     private Collider miCollider;
+    public GameObject spawn;
 
     void Start(){
         miCollider = GetComponent<Collider>();
@@ -43,6 +44,8 @@ public class ActivarCombate : MonoBehaviour
             objetoASubir9.GetComponent<SubirObjeto>().ActivarSubida();
             objetoASubir10.GetComponent<SubirObjeto>().ActivarSubida();
             objetoASubir11.GetComponent<SubirObjeto>().ActivarSubida();     
+
+            spawn.SetActive(true);
 
             comienza = true;
             miCollider.enabled = !miCollider.enabled;
