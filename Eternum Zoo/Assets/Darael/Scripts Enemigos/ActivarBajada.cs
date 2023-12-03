@@ -15,6 +15,8 @@ public class ActivarBajada : MonoBehaviour
     public GameObject objetoASubir9;
     public GameObject objetoASubir10;
 
+    public GameObject spawn;
+
     public VidaJefe vida;
 
     void Update(){
@@ -50,6 +52,8 @@ public class ActivarBajada : MonoBehaviour
             objetoASubir8.GetComponent<BajarObjeto>().ActivarBajada();
             objetoASubir9.GetComponent<BajarObjeto>().ActivarBajada();
             objetoASubir10.GetComponent<BajarObjeto>().ActivarBajada();
+
+            spawn.SetActive(false);
         
     }
 }
