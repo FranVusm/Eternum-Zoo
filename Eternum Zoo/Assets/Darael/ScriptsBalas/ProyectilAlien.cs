@@ -5,20 +5,22 @@ using UnityEngine;
 public class ProyectilAlien : MonoBehaviour
 {
     public int danio = 10; // Cantidad de daño que inflige el proyectil del Alien
-
+     
 
     private void OnTriggerEnter(Collider other)
     {
-       // Debug.Log("Colisión con Algo");
-        // Verifica si el objeto con el que colisionó tiene el tag "Player"
+        
+        // Verifica si el objeto con el que colisionó tiene el tag "enemigo"
+        
         if (other.CompareTag("Player"))
         {
-         //   Debug.Log("Colisión con Jugador");
-            
+            print("hit");
             SistemaVida sistemaVida = other.GetComponent<SistemaVida>();
             if (sistemaVida != null)
             {
+                
                 sistemaVida.RecibirDanio(danio);
+                
             }
             // Destruye el proyectil al impactar con el enemigo
             
@@ -29,6 +31,16 @@ public class ProyectilAlien : MonoBehaviour
 
         else if (!other.CompareTag("enemigo")){
             Destroy(gameObject);
+
+
         }
+
+        if (!other.CompareTag("Player"))
+        {
+            Destroy(gameObject);    
+        }
+
+           
+
     }
 }

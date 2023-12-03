@@ -5,7 +5,7 @@ using UnityEngine;
 public class Proyectil : MonoBehaviour
 {
     public int danio = 20; // Cantidad de daño que inflige el proyectil
-     
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -52,7 +52,21 @@ public class Proyectil : MonoBehaviour
             // Destruye el proyectil al impactar con el enemigo
             Destroy(gameObject);
         }
+        if (other.CompareTag("Player"))
+        {
+            
+            SistemaVida sistemaVida = other.GetComponent<SistemaVida>();
+            if (sistemaVida != null)
+            {
+                sistemaVida.RecibirDanio(10);
+                Destroy(gameObject);
+            }
+            // Destruye el proyectil al impactar con el enemigo
 
+
+            
+        }
+    
         if (other.CompareTag("Candado"))
         {
             Debug.Log("Colision con Candado");
