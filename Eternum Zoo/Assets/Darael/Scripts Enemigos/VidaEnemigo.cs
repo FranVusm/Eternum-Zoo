@@ -13,7 +13,7 @@ public class VidaEnemigo : MonoBehaviour
     private bool firstime = true;
     public Candado inicio;
     private BoxCollider _boxCollider;
-
+    public bool confirma_2 = false;
     private void Start()
     {
         // Buscar los objetos CuteAlien y CuteAlienRagdoll en los hijos del objeto actual
@@ -39,7 +39,7 @@ public class VidaEnemigo : MonoBehaviour
     {
 
         inicio = FindAnyObjectByType<Candado>();
-        if (inicio.inicia)
+        if (confirma_2)
         {
             float distanciaAlJugador = Vector3.Distance(transform.position, jugador.position);
             if (distanciaAlJugador <= distanciaAcercarMaxima && distanciaAlJugador >= distanciaAcercarMínima && !muerto)
@@ -47,7 +47,21 @@ public class VidaEnemigo : MonoBehaviour
                 // Calcular la dirección hacia el jugador
                 Vector3 direccionAlJugador = (jugador.position - transform.position).normalized;
 
-                 
+
+
+                // Mover el NPC hacia el jugador solo si no hay obstáculos debajo
+                transform.Translate(direccionAlJugador * velocidad * Time.deltaTime);
+
+            }
+        }
+        else if(inicio.inicia){
+            float distanciaAlJugador = Vector3.Distance(transform.position, jugador.position);
+            if (distanciaAlJugador <= distanciaAcercarMaxima && distanciaAlJugador >= distanciaAcercarMínima && !muerto)
+            {
+                // Calcular la dirección hacia el jugador
+                Vector3 direccionAlJugador = (jugador.position - transform.position).normalized;
+
+
 
                 // Mover el NPC hacia el jugador solo si no hay obstáculos debajo
                 transform.Translate(direccionAlJugador * velocidad * Time.deltaTime);
