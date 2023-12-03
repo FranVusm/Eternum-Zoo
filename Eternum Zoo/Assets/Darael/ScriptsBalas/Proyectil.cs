@@ -24,6 +24,20 @@ public class Proyectil : MonoBehaviour
             // Destruye el proyectil al impactar con el enemigo
             Destroy(gameObject);
         }
+
+        if (other.CompareTag("Jefe"))
+        {
+            Debug.Log("Colision con Enemigo");
+            // Obtén el componente VidaEnemigo del enemigo y reduce su vida
+            VidaJefe vidaJefe = other.GetComponent<VidaJefe>();
+            if (vidaJefe != null)
+            {
+                vidaJefe.RecibirDanio(danio);
+            }
+
+            // Destruye el proyectil al impactar con el enemigo
+            Destroy(gameObject);
+        }
         
         if (other.CompareTag("NPC"))
         {

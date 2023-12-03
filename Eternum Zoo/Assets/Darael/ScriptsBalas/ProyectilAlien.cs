@@ -23,7 +23,11 @@ public class ProyectilAlien : MonoBehaviour
             // Destruye el proyectil al impactar con el enemigo
             
         }
-        if (!other.CompareTag("enemigo")){
+        if(other.CompareTag("muro_jefe")){
+            Debug.Log("atravece");
+        }
+
+        else if (!other.CompareTag("enemigo")){
             Destroy(gameObject);
         }
     }

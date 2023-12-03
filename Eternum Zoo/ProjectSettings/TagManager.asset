@@ -13,6 +13,8 @@ TagManager:
   - NPC
   - Candado
   - puerta
+  - muro_jefe
+  - Jefe
   layers:
   - Default
   - TransparentFX
