@@ -207,8 +207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 72
+  m_fontSizeBase: 72
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -314,10 +314,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Luego de ser asesinado por los aliens, te han llevado a la sala de recurreci\xF3n
-    junto a los otros cuerpos para una reanimaci\xF3n vital.\nUna vez revivido te
-    han devuelto a tu \"prisi\xF3n\", esperando con ansias tu proximo intento de
-    huida."
+  m_text: "Has sido llevado a una sala de resurrecci\xF3n junto a otros cuerpos.
+    \n\nTe han revivido y te enviaron nuevamente a tu prisi\xF3n esperando con ansias
+    que te escapes.\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
