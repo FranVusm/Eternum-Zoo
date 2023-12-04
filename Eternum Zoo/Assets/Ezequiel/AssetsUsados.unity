@@ -223,10 +223,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1251153803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.031000001, y: 0.15662603}
-  m_AnchorMax: {x: 0.96300006, y: 0.9396261}
-  m_AnchoredPosition: {x: -358, y: 147.5}
-  m_SizeDelta: {x: -756, y: -294}
+  m_AnchorMin: {x: 0.031000001, y: 0.14070246}
+  m_AnchorMax: {x: 0.50634784, y: 0.9396261}
+  m_AnchoredPosition: {x: 458, y: 151}
+  m_SizeDelta: {x: -324, y: -301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255115568
 MonoBehaviour:
@@ -284,8 +284,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.5
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 13
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -20.388092, y: 0, z: 558.14136, w: -443.51807}
+  m_margin: {x: -619.2984, y: 0, z: 295.5968, w: -299.69226}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -366,10 +366,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1251153803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.031000001, y: 0.15662603}
+  m_AnchorMin: {x: 0.440116, y: 0.14070246}
   m_AnchorMax: {x: 0.96300006, y: 0.9396261}
-  m_AnchoredPosition: {x: 721, y: 147.5}
-  m_SizeDelta: {x: -756, y: -294}
+  m_AnchoredPosition: {x: 527.5, y: 151}
+  m_SizeDelta: {x: -369, y: -301}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333622703
 MonoBehaviour:
@@ -463,8 +463,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42.8
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -20.388092, y: 0, z: 558.14136, w: -297.8944}
+  m_margin: {x: -710.8603, y: 0, z: 346.75397, w: -297.8944}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1186,7 +1186,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 27.7
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
