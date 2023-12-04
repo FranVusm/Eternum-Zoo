@@ -12,8 +12,8 @@ public class Salida1 : MonoBehaviour
             // Cambiamos a la escena deseada. En este ejemplo, cambiamos a la escena "NuevaEscena".
             SceneManager.LoadScene("NivelBaseMilitar");
 
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
         }
     }
 }
