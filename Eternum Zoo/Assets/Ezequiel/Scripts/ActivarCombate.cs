@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ActivarCombate : MonoBehaviour
 {
+    public AudioSource audioSource1;
     public GameObject objetoASubir1;
     public GameObject objetoASubir2;
     public GameObject objetoASubir3;
@@ -21,6 +22,7 @@ public class ActivarCombate : MonoBehaviour
 
     void Start(){
         miCollider = GetComponent<Collider>();
+        audioSource1.Stop();
     }
 
     public bool comienza = false;
@@ -29,6 +31,7 @@ public class ActivarCombate : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         // Verificamos si el otro collider pertenece al jugador (puedes hacerlo mediante tags u otras verificaciones).
+        audioSource1.Play();
         if (other.CompareTag("Player"))
         {
            if (objetoASubir1 != null)

@@ -9946,6 +9946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23b788414ba49f54c8bcba1be474b552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource1: {fileID: 1889060453}
   objetoASubir1: {fileID: 1994042555}
   objetoASubir2: {fileID: 968179816}
   objetoASubir3: {fileID: 1562899487}
@@ -21996,11 +21997,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 95cc2002f97269c4484ca063af1f88e1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -23221,18 +23222,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7317200219988846415, guid: e109db37a4d47aa4d9fe2d260afda05b,
+        type: 3}
+      propertyPath: audioSource1
+      value: 
+      objectReference: {fileID: 1889060453}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1111471699671688, guid: e109db37a4d47aa4d9fe2d260afda05b,
         type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 1994042556}
-    - targetCorrespondingSourceObject: {fileID: 1111471699671688, guid: e109db37a4d47aa4d9fe2d260afda05b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1994042557}
     - targetCorrespondingSourceObject: {fileID: 1111471699671688, guid: e109db37a4d47aa4d9fe2d260afda05b,
         type: 3}
       insertIndex: -1
@@ -23265,20 +23267,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.307121, y: 1.3051255, z: 0.89811015}
   m_Center: {x: 8.258571e-21, y: -0.00000017881393, z: -0.0000005811454}
---- !u!114 &1994042557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994042555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6191236b8c0142647932660b35a6257e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  alturaDeseada: 13
-  velocidadSubida: 15
 --- !u!4 &1994042560 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4680738253334490, guid: e109db37a4d47aa4d9fe2d260afda05b,
