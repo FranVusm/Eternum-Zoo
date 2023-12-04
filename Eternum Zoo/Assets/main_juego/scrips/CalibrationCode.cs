@@ -14,11 +14,6 @@ public class CalibrationCode : MonoBehaviour
     public GameObject bateria;  
     public GameObject cooler;
     public GameObject bala;  
-    public Transform Pos1;
-    public Transform Pos2;
-    public Transform Pos3;
-    public Transform Pos4;
-    public Transform PosBat;
    
 
     void Update()
@@ -26,45 +21,44 @@ public class CalibrationCode : MonoBehaviour
         if(escopeta.activeSelf){
             if (CheckSon(escopeta.transform.Find("arreglo_1")))
             {
-                MostrarImagenEnPunto(escopeta.transform.Find("arreglo_1").gameObject);
-            }
+                MostrarImagen(escopeta.transform.Find("arreglo_1") );
+            }else{OcultarImagen(escopeta.transform.Find("arreglo_1") );}
             if (CheckSon(escopeta.transform.Find("arreglo_2")))
             {
-                Debug.Log("Mejora 2");
-            }
+                MostrarImagen(escopeta.transform.Find("arreglo_2") );
+            }else{OcultarImagen(escopeta.transform.Find("arreglo_2") );}
             if (CheckSon(escopeta.transform.Find("arreglo_3")))
             {
-                Debug.Log("Mejora 3");
-            }
+                MostrarImagen(escopeta.transform.Find("arreglo_3") );
+            }else{OcultarImagen(escopeta.transform.Find("arreglo_3") );}
             if (CheckSon(escopeta.transform.Find("arreglo_4")))
             {
-                Debug.Log("Mejora 4");
-            }
+                MostrarImagen(escopeta.transform.Find("arreglo_4") );
+            }else{OcultarImagen(escopeta.transform.Find("arreglo_4") );}
             if (CheckSon(escopeta.transform.Find("spawnesco_5")))
             {
-                Debug.Log("Se ha insertado la Bateria");
-            }
+                MostrarImagen(escopeta.transform.Find("spawnesco_5") );
+            }else{OcultarImagen(escopeta.transform.Find("spawnesco_5") );}
         }
 
 
         if(pistola.activeSelf){
             if (CheckSon(pistola.transform.Find("spawn_1")))
             {
-                Debug.Log("Mejora 1");
-                
-            }
+                MostrarImagen(pistola.transform.Find("spawn_1") );
+            }else{OcultarImagen(pistola.transform.Find("spawn_1") );}
             if (CheckSon(pistola.transform.Find("spawn_2")))
             {
-                Debug.Log("Se ha insertado la bateria");
-            }
+                MostrarImagen(pistola.transform.Find("spawn_2") );
+            }else{OcultarImagen(pistola.transform.Find("spawn_2") );}
             if (CheckSon(pistola.transform.Find("spawn_3")))
             {
-                Debug.Log("Mejora 2");
-            }
+                MostrarImagen(pistola.transform.Find("spawn_3") );
+            }else{OcultarImagen(pistola.transform.Find("spawn_3") );}
             if (CheckSon(pistola.transform.Find("spawn_4")))
             {
-                Debug.Log("Mejora 3");
-            }
+                MostrarImagen(pistola.transform.Find("spawn_4") );
+            }else{OcultarImagen(pistola.transform.Find("spawn_4" ));}
 
         }
     }
@@ -77,56 +71,70 @@ public class CalibrationCode : MonoBehaviour
         }
     }
 
-    void MostrarImagenEnPunto(GameObject objeto)
+    void MostrarImagen(Transform objetoTransform)
+{
+    if (objetoTransform.childCount > 0)
     {
-        Transform objetoTransform = objeto.GetComponent<Transform>();
-        if (objetoTransform.GetChild(0).name == "bateria(Clone)" || objetoTransform.GetChild(0).name == "bateria_esco(Clone)")
-        {
-            GameObject nuevaImagenGO = Instantiate(bateria, Vector3.zero, Quaternion.identity);
-            Image nuevaImagen = nuevaImagenGO.GetComponent<Image>();
-            float posX = PosBat.position.x;
-            float posY = PosBat.position.y;
-            Vector2 posBateriaVector2 = new Vector2(posX, posY);
-            nuevaImagen.GetComponent<RectTransform>().anchoredPosition = posBateriaVector2;        
-        }
-        else if (objetoTransform.GetChild(0).name == "cargador(Clone)")
-        {
-            GameObject nuevaImagenGO = Instantiate(cargador, Vector3.zero, Quaternion.identity);
-            Image nuevaImagen = nuevaImagenGO.GetComponent<Image>();
-            float posX = Pos1.position.x;
-            float posY = Pos1.position.y;
-            Vector2 posBateriaVector2 = new Vector2(posX, posY);
-            nuevaImagen.GetComponent<RectTransform>().anchoredPosition = posBateriaVector2;             
-        }
-        else if (objetoTransform.GetChild(0).name == "cooler(Clone)")
-        {
-            GameObject nuevaImagenGO = Instantiate(cooler, Vector3.zero, Quaternion.identity);
-            Image nuevaImagen = nuevaImagenGO.GetComponent<Image>(); 
-            float posX = Pos2.position.x;
-            float posY = Pos2.position.y;
-            Vector2 posBateriaVector2 = new Vector2(posX, posY);
-            nuevaImagen.GetComponent<RectTransform>().anchoredPosition = posBateriaVector2;   
-        }
-        else if (objetoTransform.GetChild(0).name == "silenciador(Clone)")
-        {
-            GameObject nuevaImagenGO = Instantiate(silenciador, Vector3.zero, Quaternion.identity);
-            Image nuevaImagen = nuevaImagenGO.GetComponent<Image>();    
-            float posX = Pos3.position.x;
-            float posY = Pos3.position.y;
-            Vector2 posBateriaVector2 = new Vector2(posX, posY);
-            nuevaImagen.GetComponent<RectTransform>().anchoredPosition = posBateriaVector2;   
-        }
-        else if (objetoTransform.GetChild(0).name == "balas_reserva(Clone)")
-        {
-            GameObject nuevaImagenGO = Instantiate(bala, Vector3.zero, Quaternion.identity);
-            Image nuevaImagen = nuevaImagenGO.GetComponent<Image>(); 
-            float posX = Pos4.position.x;
-            float posY = Pos4.position.y;
-            Vector2 posBateriaVector2 = new Vector2(posX, posY);
-            nuevaImagen.GetComponent<RectTransform>().anchoredPosition = posBateriaVector2;   
-        }
+        Transform hijo = objetoTransform.GetChild(0);
 
-    
+        if (hijo != null)  // Verifica si hijo no es null antes de acceder a sus propiedades
+        {
+            if (hijo.name == "bateria(Clone)" || hijo.name == "bateria_esco(Clone)")
+            {
+                bateria.SetActive(true);
+            }
+            else if (hijo.name == "cargador(Clone)")
+            {
+                cargador.SetActive(true);
+            }
+            else if (hijo.name == "cooler(Clone)")
+            {
+                cooler.SetActive(true);
+            }
+            else if (hijo.name == "silenciador(Clone)")
+            {
+                silenciador.SetActive(true);
+            }
+            else if (hijo.name == "balas_reserva(Clone)")
+            {
+                bala.SetActive(true);
+            }
+        }
     }
+}
+
+void OcultarImagen(Transform objetoTransform)
+{
+    if (objetoTransform.childCount > 0)
+    {
+        Transform hijo = objetoTransform.GetChild(0);
+
+        if (hijo != null)  // Verifica si hijo no es null antes de acceder a sus propiedades
+        {
+            if (hijo.name == "bateria(Clone)" || hijo.name == "bateria_esco(Clone)")
+            {
+                bateria.SetActive(false);
+            }
+            else if (hijo.name == "cargador(Clone)")
+            {
+                cargador.SetActive(false);
+            }
+            else if (hijo.name == "cooler(Clone)")
+            {
+                cooler.SetActive(false);
+            }
+            else if (hijo.name == "silenciador(Clone)")
+            {
+                silenciador.SetActive(false);
+            }
+            else if (hijo.name == "balas_reserva(Clone)")
+            {
+                bala.SetActive(false);
+            }
+        }
+    }
+}
+
+
 
 }
