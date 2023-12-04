@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Salida1 : MonoBehaviour
+public class Salida2 : MonoBehaviour
 {
     // Este método se ejecuta cuando otro collider entra en el collider de este objeto.
     void OnTriggerEnter(Collider other)
@@ -10,10 +10,10 @@ public class Salida1 : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Cambiamos a la escena deseada. En este ejemplo, cambiamos a la escena "NuevaEscena".
-            SceneManager.LoadScene("NivelBaseMilitar");
+            SceneManager.LoadScene("Escape");
 
-            //Cursor.lockState = CursorLockMode.None;
-            //Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
